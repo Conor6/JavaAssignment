@@ -1,6 +1,8 @@
 package MachineLearning;
 
 
+//Control Class
+
 public class Control 
 {
 
@@ -11,12 +13,22 @@ public class Control
 		myFileStuff.openFile();
 		
 		myFileStuff.readFile();
+		
+		
+		
+		Probability prob = new Probability();
+		
+		
+		prob.count();
+		prob.findProb();
+		
+		
 
 		//Algorithm firstCount = new Algorithm("MLdata.csv");
 		
 		//firstCount.counting();
 		
-	
+		
 		
 	}
 

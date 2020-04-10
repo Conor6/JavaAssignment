@@ -1,5 +1,7 @@
 package MachineLearning;
 
+//Patient Info
+
 public class PatientInfo 
 {
 	
@@ -28,7 +30,7 @@ public class PatientInfo
 	}
 
 	
-	
+	//toString to print out the patient symptoms
 	public String toString()
 	{
 		return("Temperature is  " +getTemperature()+ "  Has Aches " +getAches()+ "  Has a Cough " +getCough()+ "  Has a SoreThroat " +getSoreThroat()+" Travelled from Danger Zone? " 
@@ -37,8 +39,12 @@ public class PatientInfo
 	
 	
 
-	//Getters and Setters for the Attributes
-	String getTemperature() 
+///////////////////////////////////////////////////////////////////Getters and Setters for the Attributes//////////////////////////////////////////////////////////////////
+	
+	
+	
+	//Temperature Getter and Setter
+	public String getTemperature() 
 	{
 		return temperature;
 	}
@@ -50,6 +56,9 @@ public class PatientInfo
 	}
 
 
+
+	
+	//Aches Getter and Setter
 	String getAches() 
 	{
 		return aches;
@@ -62,6 +71,8 @@ public class PatientInfo
 	}
 
 
+	
+	//Sore Throat Getter and Setter
 	String getSoreThroat() 
 	{
 		return soreThroat;
@@ -74,6 +85,9 @@ public class PatientInfo
 	}
 
 
+	
+	
+	//Travel fromDZ Getter and Setter
 	String getTravelFromDZ() 
 	{
 		return travelFromDZ;
@@ -86,6 +100,8 @@ public class PatientInfo
 	}
 
 
+	
+	//HasCOVID19 Getter and Setter
 	String getHasCOVID19() 
 	{
 		return hasCOVID19;
@@ -98,6 +114,8 @@ public class PatientInfo
 	}
 
 
+	
+	//Cough Getter and Setter
 	String getCough() 
 	{
 		return cough;
@@ -108,6 +126,9 @@ public class PatientInfo
 	{
 		this.cough = cough;
 	}
+
+
+
 	
 	
 }

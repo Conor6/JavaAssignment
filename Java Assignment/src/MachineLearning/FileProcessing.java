@@ -6,17 +6,17 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-
-
+//FP class
 
 public class FileProcessing 
 {
+	
+	//Attributes
 	private String fileName;
 	private File dataFile;
 	private String data;
 	private String[] values;
-	private ArrayList<PatientInfo> symptomsList = new ArrayList<PatientInfo>();
-	
+	public static ArrayList<PatientInfo> symptomsList = new ArrayList<PatientInfo>();
 	
 	
 	
@@ -31,14 +31,13 @@ public class FileProcessing
 	}
 	
 	
-	
 	void openFile()
 	{
 		setDataFile(new File(getFileName()));
 	}
 	
 	
-	void readFile()
+	public void readFile()
 	{
 		try
 		{
@@ -52,26 +51,30 @@ public class FileProcessing
 				
 				String[] values = data.split(",");//Gets a column
 				
-				symptomsList.add(new PatientInfo(values[0], values[1], values[2], values[3], values[4], values[5]));
-			
+				
+				symptomsList.add(new PatientInfo(values[0], values[1], values[2], values[3], values[4], values[5])); //Creates a new Patient and adds their symptoms 
+		
 				
 			}
+		
 			
+			//System.out.println(symptomsList);
 			
-			System.out.println(symptomsList);
+			//System.out.println(symptomsList.get(1));
 			inputStream.close();
 		}
+		
 		catch(FileNotFoundException e)
+		
 		{
 			e.printStackTrace();
 		
 		
 		}
+		//return symptomsList;
 
 		
 	}//End readFile()
-	
-	
 	
 	
 	
@@ -126,30 +129,16 @@ public class FileProcessing
 
 
 
-	private ArrayList<PatientInfo> getSymptomsList() 
+	public ArrayList<PatientInfo> getSymptomsList() 
 	{
 		return symptomsList;
 	}
 
 
 
-	private void setSymptomsList(ArrayList<PatientInfo> symptomsList) 
+	public void setSymptomsList(ArrayList<PatientInfo> symptomsList) 
 	{
 		this.symptomsList = symptomsList;
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }
