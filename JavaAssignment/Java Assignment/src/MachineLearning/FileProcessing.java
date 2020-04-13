@@ -136,6 +136,7 @@ public class FileProcessing
 
 
 
+	@SuppressWarnings("static-access")
 	public void setSymptomsList(ArrayList<PatientInfo> symptomsList) 
 	{
 		this.symptomsList = symptomsList;
