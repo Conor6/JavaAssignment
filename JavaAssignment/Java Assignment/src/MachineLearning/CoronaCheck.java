@@ -15,7 +15,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class AddPatient extends JFrame {
+public class CoronaCheck extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -27,7 +27,7 @@ public class AddPatient extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public AddPatient() {
+	public CoronaCheck() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -41,9 +41,9 @@ public class AddPatient extends JFrame {
 		lblCoronavirusTestingTool.setBounds(10, 11, 414, 35);
 		contentPane.add(lblCoronavirusTestingTool);
 		
-		JLabel lblEnterPaitientInformation = new JLabel("Enter Patient Information:");
+		JLabel lblEnterPaitientInformation = new JLabel("Enter Symptoms:");
 		lblEnterPaitientInformation.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 16));
-		lblEnterPaitientInformation.setBounds(10, 76, 267, 14);
+		lblEnterPaitientInformation.setBounds(10, 76, 267, 23);
 		contentPane.add(lblEnterPaitientInformation);
 		
 		JLabel lblTemperature = new JLabel("Temperature:");
@@ -96,9 +96,13 @@ public class AddPatient extends JFrame {
 		textField_4.setBounds(359, 159, 65, 20);
 		contentPane.add(textField_4);
 		
-		JButton btnAdd = new JButton("Add");
+		JButton btnAdd = new JButton("See Restults");
+		btnAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
 		btnAdd.setBackground(Color.WHITE);
-		btnAdd.setBounds(124, 227, 89, 23);
+		btnAdd.setBounds(97, 227, 116, 23);
 		contentPane.add(btnAdd);
 		
 		JButton btnNewButton = new JButton("Back");
@@ -116,7 +120,7 @@ public class AddPatient extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(229, 227, 89, 23);
+		btnNewButton.setBounds(229, 227, 106, 23);
 		contentPane.add(btnNewButton);
 	}
 }

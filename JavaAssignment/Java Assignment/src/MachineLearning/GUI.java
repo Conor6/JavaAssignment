@@ -23,23 +23,9 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import javax.swing.JEditorPane;
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements ActionListener
+{
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI frame = new GUI();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -50,47 +36,115 @@ public class GUI extends JFrame {
 		getContentPane().setLayout(null);
 		
 		JButton btnExit = new JButton("Exit");
+		
 		btnExit.setForeground(Color.BLACK);
-		btnExit.setBackground(Color.BLACK);
+		
+		btnExit.setBackground(Color.WHITE);
+		
 		btnExit.setBounds(540, 340, 89, 23);
+		
 		getContentPane().add(btnExit);
 		
-		JButton btnTrainProgram = new JButton("Train ");
-		btnTrainProgram.setBackground(Color.BLACK);
-		btnTrainProgram.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		btnExit.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent myEvent) 
+			{
+				if(myEvent.getSource() == btnExit) 
+				{
+
+					setVisible(false);
+					
+				}
 			}
+			
+			
+		});
+		
+		
+		
+		JButton btnTrainProgram = new JButton("Train ");
+		
+		btnTrainProgram.setBackground(Color.WHITE);
+		
+		btnTrainProgram.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				
+				
+			}
+			
+			
 		});
 		btnTrainProgram.setBounds(10, 340, 89, 23);
 		getContentPane().add(btnTrainProgram);
 		
 		JLabel lblCoronavirusTestingTool = new JLabel("Coronavirus Testing Tool");
+		
 		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));
+		
 		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);
+		
 		lblCoronavirusTestingTool.setBounds(10, 0, 619, 47);
+		
 		getContentPane().add(lblCoronavirusTestingTool);
 		
+		
 		JButton btnAddPatient = new JButton("Add Patient");
+		
 		btnAddPatient.addActionListener(new ActionListener() 
 		{
-			public void actionPerformed(ActionEvent e) 
+			public void actionPerformed(ActionEvent myEvent) 
 			{
+				if(myEvent.getSource() == btnAddPatient) 
+				{
+					//This will display pop-up
+					AddPatient patient = new AddPatient();
+					patient.setVisible(true);
+					
+				}
 				
+			
 			}
 		});
 		
 		
-		btnAddPatient.setBackground(Color.BLACK);
-		btnAddPatient.setBounds(109, 340, 89, 23);
+		btnAddPatient.setBackground(Color.WHITE);
+		
+		btnAddPatient.setBounds(109, 340, 105, 23);
+		
 		getContentPane().add(btnAddPatient);
 		
+		
 		JButton btnNewButton = new JButton("Check");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		
+		
+		btnNewButton.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent myEvent) 
+			{
+				if(myEvent.getSource() == btnNewButton) 
+				{
+					//This will display pop-up
+					CoronaCheck patient = new CoronaCheck();
+					patient.setVisible(true);
+					
+				}
 			}
 		});
-		btnNewButton.setBackground(Color.BLACK);
+		btnNewButton.setBackground(Color.WHITE);
+		
 		btnNewButton.setBounds(296, 340, 89, 23);
+		
 		getContentPane().add(btnNewButton);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) 
+	{
+		// TODO Auto-generated method stub
+		
 	}
 }

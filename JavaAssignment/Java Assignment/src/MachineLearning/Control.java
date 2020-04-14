@@ -14,7 +14,8 @@ public class Control
 		
 		myFileStuff.readFile();
 		
-		
+		GUI homeScreen = new GUI();
+		homeScreen.setVisible(true);
 		
 		Probability prob = new Probability("cool", "yes", "yes", "yes", "yes");
 		
