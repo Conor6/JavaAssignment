@@ -1,28 +1,20 @@
 package MachineLearning;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.BoxLayout;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import java.awt.GridLayout;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JToggleButton;
-import javax.swing.Box;
-import java.awt.Component;
 import java.awt.Color;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import javax.swing.JEditorPane;
 
+
+
+
+
+@SuppressWarnings("serial")
 public class GUI extends JFrame implements ActionListener
 {
 
@@ -31,6 +23,7 @@ public class GUI extends JFrame implements ActionListener
 	 * Create the frame.
 	 */
 	public GUI() {
+		getContentPane().setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 655, 413);
 		getContentPane().setLayout(null);
@@ -53,8 +46,9 @@ public class GUI extends JFrame implements ActionListener
 				if(myEvent.getSource() == btnExit) 
 				{
 
-					setVisible(false);
+					JOptionPane.showMessageDialog(getContentPane(),"The program will exit");
 					
+					System.exit(0);
 				}
 			}
 			
@@ -80,41 +74,16 @@ public class GUI extends JFrame implements ActionListener
 		btnTrainProgram.setBounds(10, 340, 89, 23);
 		getContentPane().add(btnTrainProgram);
 		
-		JLabel lblCoronavirusTestingTool = new JLabel("Coronavirus Testing Tool");
+		JLabel lblCoronavirusTestingTool = new JLabel("COVID19 Testing Tool");
+		lblCoronavirusTestingTool.setBackground(Color.WHITE);
 		
 		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));
 		
 		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);
 		
-		lblCoronavirusTestingTool.setBounds(10, 0, 619, 47);
+		lblCoronavirusTestingTool.setBounds(10, 11, 619, 35);
 		
 		getContentPane().add(lblCoronavirusTestingTool);
-		
-		
-		JButton btnAddPatient = new JButton("Add Patient");
-		
-		btnAddPatient.addActionListener(new ActionListener() 
-		{
-			public void actionPerformed(ActionEvent myEvent) 
-			{
-				if(myEvent.getSource() == btnAddPatient) 
-				{
-					//This will display pop-up
-					AddPatient patient = new AddPatient();
-					patient.setVisible(true);
-					
-				}
-				
-			
-			}
-		});
-		
-		
-		btnAddPatient.setBackground(Color.WHITE);
-		
-		btnAddPatient.setBounds(109, 340, 105, 23);
-		
-		getContentPane().add(btnAddPatient);
 		
 		
 		JButton btnNewButton = new JButton("Check");
@@ -128,6 +97,7 @@ public class GUI extends JFrame implements ActionListener
 				{
 					//This will display pop-up
 					CoronaCheck patient = new CoronaCheck();
+					setVisible(false);
 					patient.setVisible(true);
 					
 				}
@@ -135,7 +105,7 @@ public class GUI extends JFrame implements ActionListener
 		});
 		btnNewButton.setBackground(Color.WHITE);
 		
-		btnNewButton.setBounds(296, 340, 89, 23);
+		btnNewButton.setBounds(109, 340, 89, 23);
 		
 		getContentPane().add(btnNewButton);
 		

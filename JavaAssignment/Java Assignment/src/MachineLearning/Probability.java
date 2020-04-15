@@ -1,6 +1,7 @@
 package MachineLearning;
 
 import java.util.ArrayList;
+import java.lang.Math;
 
 //Check calculation***
 
@@ -81,7 +82,7 @@ public class Probability
 	public Probability(String temperature, String aches, String soreThroat, String cough, String fromDZ) 
 	{
 		
-		FileProcessing findingProb = new FileProcessing("MLdata.csv");
+		//FileProcessing findingProb = new FileProcessing("MLdata.csv");
 		
 		this.temperature = temperature;
 		this.aches = aches;
@@ -168,9 +169,7 @@ public class Probability
 			 
 			 if(tempCool == true)
 			 {
-			
 				temperatureCool++;
-				
 			 }
 			 
 			 
@@ -178,9 +177,7 @@ public class Probability
 			 
 			 if(tempNorm == true)
 			 {
-			
 				temperatureNorm++;
-				
 			 }
 			 
 			 
@@ -188,7 +185,6 @@ public class Probability
 			 
 			 if(hasAches == true)
 			 {
-			
 				achesY++;
 			 }
 			 else
@@ -241,7 +237,6 @@ public class Probability
 			 
 			 if(hasCOVID19 == true)
 			 {
-			 
 				hasCOVID19Y++;
 			 }
 			 else
@@ -271,7 +266,6 @@ public class Probability
 			 
 			 if(hasAches == true & hasCOVID19 == true)
 			 {
-				 
 				 achesYCOVID19Y++;
 			 }
 			 else if (hasAches == true & hasCOVID19 == false)
@@ -398,7 +392,6 @@ public class Probability
 		
 		
 		//Calculating the probability of having Aches if COVID19 is Yes
-		//System.out.println("Aches before dividing " + achesYCOVID19Y);
 		achesYCOVID19Y = achesYCOVID19Y / hasCOVID19Y;
 		achesNCOVID19Y = achesNCOVID19Y / hasCOVID19Y;
 		
@@ -407,7 +400,6 @@ public class Probability
 		achesNCOVID19N = achesNCOVID19N / hasCOVID19N;
 		
 		//Calculating the probability of having a Sore Throat if COVI19 is Yes
-		
 		soreThroatYCOVID19Y = soreThroatYCOVID19Y / hasCOVID19Y;
 		soreThroatNCOVID19Y = soreThroatNCOVID19Y / hasCOVID19Y;
 		
@@ -439,12 +431,10 @@ public class Probability
 		
 		
 		//Calculating the probability of having COVID19 Yes
-		
 		hasCOVID19Y = (hasCOVID19Y / (float)probabilityList.size());
 		
 		
 		//Calculating the probability of having COVID19 No
-		
 		hasCOVID19N = hasCOVID19N / (float)probabilityList.size();
 		
 		
@@ -492,7 +482,7 @@ public class Probability
 		}
 		else
 		{
-			System.out.println("inside if else st y " + soreThroatNCOVID19Y);
+			
 			 soreThroatY = soreThroatNCOVID19Y;
 			 soreThroatN = soreThroatNCOVID19N;
 		}
@@ -531,10 +521,12 @@ public class Probability
 		
 		ansN = tempN * achesN * soreThroatN * coughN * DZN * (hasCOVID19N);
 		
-		answer = ansY/(ansN + ansY);
-		answer = answer *100;
+		setAnswer(ansY/(ansN + ansY));
+		setAnswer(getAnswer() *100);
 		
-		System.out.println(answer);
+		setAnswer(Math.round(getAnswer()));
+		
+		//System.out.println(getAnswer());
 		
 	 }
 	
@@ -833,6 +825,16 @@ public class Probability
 
 	private void setTemperatureCoolCOVID19N(float temperatureCoolCOVID19N) {
 		this.temperatureCoolCOVID19N = temperatureCoolCOVID19N;
+	}
+
+
+	float getAnswer() {
+		return answer;
+	}
+
+
+	private void setAnswer(float answer) {
+		this.answer = answer;
 	}
 
 }

@@ -8,28 +8,23 @@ public class Control
 
 	public static void main(String[] args) 
 	{
-		FileProcessing myFileStuff = new FileProcessing("MLdata.csv");
-		
-		myFileStuff.openFile();
-		
-		myFileStuff.readFile();
 		
 		GUI homeScreen = new GUI();
 		homeScreen.setVisible(true);
 		
-		Probability prob = new Probability("cool", "yes", "yes", "yes", "yes");
-		
-		
-		prob.count();
-		prob.findProb();
-		
-		
-
+		//FileProcessing myFileStuff = new FileProcessing("MLdata.csv");
+		//myFileStuff.openFile();
+		//myFileStuff.readFile();
+		//Probability prob = new Probability("normal", "no", "no", "no", "yes");
+		//prob.count();
+		//prob.findProb();
 		//Algorithm firstCount = new Algorithm("MLdata.csv");
-		
 		//firstCount.counting();
 		
 		
+		TestAccuracy test = new TestAccuracy();
+		
+		test.findAccuracy();
 		
 	}
 
