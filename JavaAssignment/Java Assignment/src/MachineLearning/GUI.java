@@ -4,25 +4,14 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import javax.swing.filechooser.FileSystemView;
-
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
-
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-
-
-
 
 
 @SuppressWarnings("serial")
@@ -44,7 +33,7 @@ public class GUI extends JFrame
 		
 		getContentPane().setBackground(Color.WHITE);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 655, 413);
+		setBounds(100, 100, 730, 462);
 		getContentPane().setLayout(null);
 		
 		JButton btnExit = new JButton("Exit");

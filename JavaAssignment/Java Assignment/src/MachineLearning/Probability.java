@@ -150,36 +150,41 @@ public class Probability
 			 
 			 if(tempHot == true)
 			 {
-				setTemperatureHot(getTemperatureHot() + 1);
-			 }
+				setTemperatureHot(getTemperatureHot() + 1); //Increment TemperatureHot
+				
+			 }//End if temp hot == true
 			 
 			//tempCool returns a True value if the temperature value is cool, if it is then TemperatureCool is incremented by 1
 			 boolean tempCool = probabilityList.get(i).getTemperature().contains("cool");
 			 
 			 if(tempCool == true)
 			 {
-				setTemperatureCool(getTemperatureCool() + 1);
-			 }
+				setTemperatureCool(getTemperatureCool() + 1); //Increment TemperatureCool
+				
+			 }//End if tempCool == true
 			 
 			//tempNorm returns a True value if the temperature value is normal, if it is then TemperatureNorm is incremented by 1
 			 boolean tempNorm = probabilityList.get(i).getTemperature().contains("normal");
 			 
 			 if(tempNorm == true)
 			 {
-				setTemperatureNorm(getTemperatureNorm() + 1);
-			 }
+				setTemperatureNorm(getTemperatureNorm() + 1); //Increment TemperatureNorm
+				
+			 }//End if temp Norm == ture
 			 
 			//hasAches returns a True value if the aches value is yes, if it is then achesY is incremented by 1, otherwise achesN is incremented by 1
 			 boolean hasAches = probabilityList.get(i).getAches().contains("yes");
 			 
 			 if(hasAches == true)
 			 {
-				setAchesY(getAchesY() + 1);
-			 }
+				setAchesY(getAchesY() + 1); //Increment AchesY
+				
+			 }//End if hasAches == true
 			 else
 			 {
-				 setAchesN(getAchesN() + 1);
-			 }
+				 setAchesN(getAchesN() + 1); //Increment AchesN
+				 
+			 }//End else setAchesN
 			 
 			//hasSoreThroat returns a True value if the value is yes, if it is then soreThroatY is incremented by 1, otherwise soreThroatN is incremented by 1
 			 boolean hasSoreThroat = probabilityList.get(i).getSoreThroat().contains("yes");
@@ -187,158 +192,198 @@ public class Probability
 			 if(hasSoreThroat == true)
 			 {
 			
-				setSoreThroatY(getSoreThroatY() + 1);
-			 }
+				setSoreThroatY(getSoreThroatY() + 1); //Increment SoreThroatY
+				
+			 }//End if hasSoreThroat == true
 			 else
 			 {
-				 setSoreThroatN(getSoreThroatN() + 1);
-			 }
+				 setSoreThroatN(getSoreThroatN() + 1); //Increment SoreThroatN
+				 
+			 }//End else setSoreThroat
 			 
 			 //hasCough returns a True value if the value is yes, if it is then hasCoughY is incremented by 1, otherwise hasCoughN is incremented by 1
 			 boolean hasCough = probabilityList.get(i).getCough().contains("yes");
 			 
 			 if(hasCough == true)
 			 {
-				setCoughY(getCoughY() + 1);
-			 }
+				setCoughY(getCoughY() + 1); //Increment CoughY
+				
+			 }//End if hasCough == true
 			 else
 			 {
-				 setCoughN(getCoughN() + 1);
-			 }
+				 setCoughN(getCoughN() + 1); //Increment CoughN
+				 
+			 }//End setCoughN
 			 
 			//fromDZ returns a True value if the value is yes, if it is then fromDZY is incremented by 1, otherwise fromDZN is incremented by 1
 			 boolean fromDZ = probabilityList.get(i).getTravelFromDZ().contains("yes");
 			 
 			 if(fromDZ == true)
 			 {
-				setFromDZY(getFromDZY() + 1);
-			 }
+				setFromDZY(getFromDZY() + 1); //Increment fromDZY
+				
+			 }//End if fromDZ == true
 			 else
 			 {
-				 setFromDZN(getFromDZN() + 1);
-			 }
+				 setFromDZN(getFromDZN() + 1); //Increment fromDZN
+				 
+			 }//End else setFromDZN
 			 
 			//hasCOVID19 returns a True value if the value is yes, if it is then hasCOVID19 is incremented by 1, otherwise hasCOVID19N is incremented by 1
 			 boolean hasCOVID19 = probabilityList.get(i).getHasCOVID19().contains("yes");
 			 
 			 if(hasCOVID19 == true)
 			 {
-				setHasCOVID19Y(getHasCOVID19Y() + 1);
-			 }
+				setHasCOVID19Y(getHasCOVID19Y() + 1); //Increment setHasCOVID19Y
+				
+			 }//End if hasCOVID19 == true
 			 else
 			 {
-				 setHasCOVID19N(getHasCOVID19N() + 1);
-			 }
+				 setHasCOVID19N(getHasCOVID19N() + 1); //Increment HasCOVID19
+				 
+			 }//End else setHasCOVID19N
 			 
 			 
 			 if(hasCough == true & hasCOVID19 == true)
 			 {
-				 setCoughYCOVID19Y(getCoughYCOVID19Y() + 1);
-			 }
+				 setCoughYCOVID19Y(getCoughYCOVID19Y() + 1); //Increment COVID19Y
+				 
+			 }//End if setCoughYCOVID19Y
 			 else if(hasCough == false & hasCOVID19 == false)
 			 {
-				 setCoughNCOVID19N(getCoughNCOVID19N() + 1);
-			 }
+				 setCoughNCOVID19N(getCoughNCOVID19N() + 1); //Increment COVID19N
+				 
+			 }//End if setCoughNCOIVD19N
 			 
 			 
-			 if(hasCough == false & hasCOVID19 == true)
+			 //If hasCough is no and hasCOVID19 is Yes increment CoughNCOVID19Y
+			 if(hasCough == false & hasCOVID19 == true)		
 			 {
-				 setCoughNCOVID19Y(getCoughNCOVID19Y() + 1);
-			 }
+				 setCoughNCOVID19Y(getCoughNCOVID19Y() + 1); //Increment CoughNCOVID19Y
+				 
+			 }//Else if hasCough is yes and hasCOVID19 is no increment CoughYCOVID19N
 			 else if(hasCough == true & hasCOVID19 == false)
 			 {
-				 setCoughYCOVID19N(getCoughYCOVID19N() + 1);
-			 }
+				 setCoughYCOVID19N(getCoughYCOVID19N() + 1); //Increment CoughYCOVID19N
+				 
+			 }//End else if
 			 
 			 
+			 //If hasAches is yes and hasCOVID19 is yes increment AchesYCOVID19Y
 			 if(hasAches == true & hasCOVID19 == true)
 			 {
-				 setAchesYCOVID19Y(getAchesYCOVID19Y() + 1);
-			 }
+				 setAchesYCOVID19Y(getAchesYCOVID19Y() + 1); //Increment AchesYCOVID19Y
+				 
+			 }//Else if hasAches is yes and hasCOVID19 is false increment AchesYCOVID19N
 			 else if (hasAches == true & hasCOVID19 == false)
 			 {
-				 setAchesYCOVID19N(getAchesYCOVID19N() + 1);
-			 }
+				 setAchesYCOVID19N(getAchesYCOVID19N() + 1); //Increment AchesYCOVID19N
+				 
+			 }//End else if
 			 
 			 
+			 //If hasAches is no and COVID19 is true Increment AchesNCOVID19Y
 			 if(hasAches == false & hasCOVID19 == true)
 			 {
-				 setAchesNCOVID19Y(getAchesNCOVID19Y() + 1);
-			 }
+				 setAchesNCOVID19Y(getAchesNCOVID19Y() + 1); //Increment AchesNCOVID19Y
+				 
+			 }//If hasAches is no and COVID19 is no Increment AchesNCOVID19Y
 			 else if(hasAches == false & hasCOVID19 == false)
 			 {
-				 setAchesNCOVID19N(getAchesNCOVID19N() + 1);
-			 }
+				 setAchesNCOVID19N(getAchesNCOVID19N() + 1); ////Increment AchesNCOVID19N
+				 
+			 }//Else if
 			 
 			 
+			 //If tempCool is yes and hasCOVID19 is yes increment TemperatureCoolCOVID19Y
 			 if(tempCool == true & hasCOVID19 == true)
 			 {
-				 setTemperatureCoolCOVID19Y(getTemperatureCoolCOVID19Y() + 1);
-			 }
+				 setTemperatureCoolCOVID19Y(getTemperatureCoolCOVID19Y() + 1); //Increment TemperatureCoolCOVID19Y
+				 
+			 }//If tempCool is yes and hasCOVID19 is no increment TemperatureCoolCOVID19N
 			 else if(tempCool == true & hasCOVID19 == false)
 			 {
-				 setTemperatureCoolCOVID19N(getTemperatureCoolCOVID19N() + 1);
-			 }
+				 setTemperatureCoolCOVID19N(getTemperatureCoolCOVID19N() + 1); //Increment TemperatureCoolCOVID19Y
+				 
+			 }//End else if
 			 
 			
+			 //If tempNorm is yes and hasCOVID19 is yes increment TemperatureNormCOVID19Y
 			 if(tempNorm == true & hasCOVID19 == true)
 			 {
-				 setTemperatureNormCOVID19Y(getTemperatureNormCOVID19Y() + 1);
-			 }
+				 setTemperatureNormCOVID19Y(getTemperatureNormCOVID19Y() + 1); //Increment TemperatureNormCOVID19Y
+				 
+			 }//Else if tempNorm is yes and hasCOVID19 is no increment TemperatureNormCOVID19N
 			 else if(tempNorm == true & hasCOVID19 == false)
 			 {
-				 setTemperatureNormCOVID19N(getTemperatureNormCOVID19N() + 1);
-			 }
+				 setTemperatureNormCOVID19N(getTemperatureNormCOVID19N() + 1); //Increment TemperatureNormCOVID19N
+				 
+			 }//End else if
 			 
 			 
+			 //If tempHot is yes and hasCOVID19 is yes increment TemperatureHotCOVID19Y
 			 if(tempHot == true & hasCOVID19 == true)
 			 {
-				 setTemperatureHotCOVID19Y(getTemperatureHotCOVID19Y() + 1);
-			 }
+				 setTemperatureHotCOVID19Y(getTemperatureHotCOVID19Y() + 1); //Increment TemperatureHotCOVID19Y
+				 
+			 }//Else if temp hot is yes and hasCOVID19 is no increment TemperatureHotCOVID19N
 			 else if(tempHot == true & hasCOVID19 == false)
 			 {
-				 setTemperatureHotCOVID19N(getTemperatureHotCOVID19N() + 1);
-			 }
+				 setTemperatureHotCOVID19N(getTemperatureHotCOVID19N() + 1); //Increment TemperatureHotCOVID19N
+				 
+			 }//End if else
 			 
 			 
+			 //If soreThroat is yes and hasCOVID19 is yes increment soreThroatYCOVID19Y
 			 if(hasSoreThroat == true & hasCOVID19 == true)
 			 {
-				 setSoreThroatYCOVID19Y(getSoreThroatYCOVID19Y() + 1);
-			 }
+				 setSoreThroatYCOVID19Y(getSoreThroatYCOVID19Y() + 1); //Increment soreThroatYCOVID19Y
+				 
+			 }//Else if hasSoreThroat is no and hasCOVID19 is no increment SoreThroatNCOVID19N
 			 else if(hasSoreThroat == false & hasCOVID19 == false)
 			 {
-				 setSoreThroatNCOVID19N(getSoreThroatNCOVID19N() + 1);
-			 }
+				 setSoreThroatNCOVID19N(getSoreThroatNCOVID19N() + 1); //Increment SoreThroatNCOVID19N
+				 
+			 }//end if else
 			 
 			 
+			 //hasSoreThroat is no and hasCOVID19 is yes increment SoreThroatNCOVID19Y
 			 if(hasSoreThroat == false & hasCOVID19 == true)
 			 {
-				 setSoreThroatNCOVID19Y(getSoreThroatNCOVID19Y() + 1);
-			 }
+				 setSoreThroatNCOVID19Y(getSoreThroatNCOVID19Y() + 1); //Increment SoreThroatNCOVID19Y
+				 
+			 }//Else if hasSoreThroat is yes and hasCOVID19 is no increment SoreThroatYCOVID19N
 			 else if(hasSoreThroat == true & hasCOVID19 == false)
 			 {
-				 setSoreThroatYCOVID19N(getSoreThroatYCOVID19N() + 1);
-			 }
+				 setSoreThroatYCOVID19N(getSoreThroatYCOVID19N() + 1); //Increment SoreThroatYCOVID19N
+				 
+			 }//End if else
 			 
 			 
+			 //If fromDZ is yes and hasCOVID19 is yes increment fromDZYCOVID19Y
 			 if(fromDZ == true & hasCOVID19 == true)
 			 {
-				 setFromDZYCOVID19Y(getFromDZYCOVID19Y() + 1);
-			 }
+				 setFromDZYCOVID19Y(getFromDZYCOVID19Y() + 1); //Increment fromDZYCOVID19Y
+				 
+			 }//Else if fromDZ is no and hasCOVID19 is no increment fromDZNCOVID19N
 			 else if(fromDZ == false & hasCOVID19 == false)
 			 {
-				 setFromDZNCOVID19N(getFromDZNCOVID19N() + 1);
-			 }
+				 setFromDZNCOVID19N(getFromDZNCOVID19N() + 1); //Increment fromDZNCOVID19N
+				 
+			 }//End if else
 			 
 			 
+			 //if fromDZ is no and hasCOVID19 is yes increment fromDZNCOVID19Y
 			 if(fromDZ == false & hasCOVID19 == true)
 			 {
-				 setFromDZNCOVID19Y(getFromDZNCOVID19Y() + 1);
-			 }
+				 setFromDZNCOVID19Y(getFromDZNCOVID19Y() + 1); //Increment fromDZNCOVID19Y
+				 
+			 }//Else if fromDZ is yes and hasCOVID19 is no increment fromDZYCOVID19N
 			 else if(fromDZ == true & hasCOVID19 == false)
 			 { 
-				 setFromDZYCOVID19N(getFromDZYCOVID19N() + 1);
-			 }
+				 setFromDZYCOVID19N(getFromDZYCOVID19N() + 1); //increment fromDZYCOVID19N
+				 
+			 }//End else if
 			
 			 
 		 }//End for loop
@@ -350,17 +395,15 @@ public class Probability
 	 //This method will use the counts from the count() mehtod to calculate the probability of having COVID19 based on the inputted symptoms
 	 public void findProb()
 	 {
-		 
-		 
 		 //Opening the Fileprocessor class
 		 FileProcessing findingProb = new FileProcessing(Control.getCsvFile());
 		 findingProb.openFile();
 		
-		 //Creating a new ArrayList
+		 //Creating a new ArrayList probabilityList which will store all the Patient objects
 		 ArrayList<PatientInfo> probabilityList = new ArrayList<PatientInfo>();
 		
 		 
-		 //Populating probability list with the data from the file
+		 //Populating probability list with the data from the symptomsList from the FileProcessing class
 		 probabilityList = findingProb.getSymptomsList();
 		 
 		 
@@ -409,7 +452,6 @@ public class Probability
 		setFromDZNCOVID19Y(getFromDZNCOVID19Y() / getHasCOVID19Y());
 		
 		
-		
 		//Calculating the probability of having travelled to a DZ if COVID19 is No
 		setFromDZYCOVID19N(getFromDZYCOVID19N() / getHasCOVID19N());
 		setFromDZNCOVID19N(getFromDZNCOVID19N() / getHasCOVID19N());
@@ -427,7 +469,7 @@ public class Probability
 		//If the temperature is cool the probability of not having COVI19 with a cool temp is put in tempN
 		if(temperature.contains( "cool"))
 		{
-			setTempY(getTemperatureCoolCOVID19Y());
+			setTempY(getTemperatureCoolCOVID19Y()); 
 			setTempN(getTemperatureCoolCOVID19N());
 		}
 		
@@ -454,43 +496,48 @@ public class Probability
 			 setAchesY(getAchesYCOVID19Y());
 			 setAchesN(getAchesYCOVID19N());
 		}
-		else 
+		else //If no aches the probability of them having COVID19 is put into achesY and the probability of them not having COVID19 is put into AchesN
 		{
 			 setAchesY(getAchesNCOVID19Y());
 			 setAchesN(getAchesNCOVID19N());
 		}
 		
-		
+		//If the patient has a soreThroat the probability of them having COVID19 with a soreThroat is put into soreThroatY
+		//If the patient doesn't have a soreThroat the probability of them not having COVID19 with a soreThroat is put into soreThroatN
 		if(soreThroat.contains("yes"))
 		{
 			 setSoreThroatY(getSoreThroatYCOVID19Y());
 			 setSoreThroatN(getSoreThroatYCOVID19N());
 		}
-		else
+		else//If there is no soreThroat the probability of them having COVID19 with no soreThroat is put into soreThroatY and the probability of not having COVID19 is put into soreThroatN
 		{
 			 setSoreThroatY(getSoreThroatNCOVID19Y());
 			 setSoreThroatN(getSoreThroatNCOVID19N());
-		}
+			 
+		}//End if else
 	
 		
+		//If the patient has a cough the probability of them having COVID19 with a cough is put into coughY
+		//If the patient doesn't have a cough the probability of them not having COVID19 with a cough is put into coughN
 		if(cough.contains("yes"))
 		{
 			 setCoughY(getCoughYCOVID19Y());
 			 setCoughN(getCoughYCOVID19N());
 		}
-		else
+		else//If there is no cough the probability of them having COVID19 with no cough is put into coughY and the probability of not having COVID19 is put into coughN
 		{
 			 setCoughY(getCoughNCOVID19Y());
 			 setCoughN(getCoughNCOVID19N());
 		}
 		
-		
+		//If the patient has travelled from a DZ the probability of them having COVID19 is put into DZY
+		//If the patient has not travelled from a DZ the probability of them not having COVID19 is put into DZN
 		if(fromDZ.contains("yes"))
 		{
 			 setDZY(getFromDZYCOVID19Y());
 			 setDZN(getFromDZYCOVID19N());
 		}
-		else
+		else//If the patient didn't travel from a DZ the probability of them having COVID19 without travelling from a DZ is put into DZY and the probability of them not having COVID19 is put into DZN
 		{
 			 setDZY(getFromDZNCOVID19Y());
 			 setDZN(getFromDZNCOVID19N());

@@ -33,7 +33,6 @@ public class CoronaCheck extends JFrame {
 	private String cough;
 	private String soreThroat;
 	private String travelFromDZ;
-	private String hasCOVID19;
 	private int    counter;
 
 	/**
@@ -41,7 +40,7 @@ public class CoronaCheck extends JFrame {
 	 */
 	public CoronaCheck() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 526, 389);
+		setBounds(100, 100, 730, 462);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -50,7 +49,7 @@ public class CoronaCheck extends JFrame {
 		JLabel lblCoronavirusTestingTool = new JLabel("Coronavirus Testing Tool");
 		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));
 		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);
-		lblCoronavirusTestingTool.setBounds(10, 11, 414, 35);
+		lblCoronavirusTestingTool.setBounds(119, 11, 414, 35);
 		contentPane.add(lblCoronavirusTestingTool);
 		
 		JLabel lblEnterPaitientInformation = new JLabel("Enter Symptoms:");
@@ -365,54 +364,38 @@ public class CoronaCheck extends JFrame {
 		contentPane.add(DZNo);
 	}
 
-	private String getTemperature() {
-		return temperature;
-	}
+	
 
 	private void setTemperature(String temperature) {
 		this.temperature = temperature;
 	}
 
-	private String getAches() {
-		return aches;
-	}
+	
 
 	private void setAches(String aches) {
 		this.aches = aches;
 	}
 
-	private String getCough() {
-		return cough;
-	}
+	
 
 	private void setCough(String cough) {
 		this.cough = cough;
 	}
 
-	private String getSoreThroat() {
-		return soreThroat;
-	}
 
 	private void setSoreThroat(String soreThroat) {
 		this.soreThroat = soreThroat;
 	}
 
-	private String getTravelFromDZ() {
-		return travelFromDZ;
-	}
+	
 
 	private void setTravelFromDZ(String travelFromDZ) {
 		this.travelFromDZ = travelFromDZ;
 	}
 
-	private String getHasCOVID19() {
-		return hasCOVID19;
-	}
+	
 
-	private void setHasCOVID19(String hasCOVID19) {
-		this.hasCOVID19 = hasCOVID19;
-	}
-
+	
 	private int getCounter() {
 		return counter;
 	}
