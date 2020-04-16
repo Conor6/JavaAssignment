@@ -10,33 +10,29 @@ import java.util.Scanner;
 
 public class FileProcessing 
 {
-	
 	//Attributes
-	private String fileName;
 	private File dataFile;
 	private String data;
 	private String[] values;
 	public static ArrayList<PatientInfo> symptomsList = new ArrayList<PatientInfo>();
 	
 	
-	
 	public FileProcessing (String fileName) 
 	{
-		this.setFileName(fileName);
 		this.setDataFile(dataFile);
 		this.setData(data);
 		this.setValues(values);
-		
-		
 	}
 	
 	
+	//This method opens the file that has been selected. The default file is MLdata.csv
 	void openFile()
 	{
 		setDataFile(new File(Control.getCsvFile()));
 	}
 	
 	
+	//This method reads through the selected file. Each row is stored as a patient object in the ArrayList symptomsList
 	public void readFile()
 	{
 		try
@@ -45,7 +41,7 @@ public class FileProcessing
 			
 			inputStream.nextLine(); //This ignores the first line of the CSV file
 			
-			while(inputStream.hasNext()) 
+			while(inputStream.hasNext()) //Keep going until there are no more lines left in the file
 			{
 				String data = inputStream.nextLine(); //Gets a whole line from file
 				
@@ -53,45 +49,21 @@ public class FileProcessing
 				
 				
 				symptomsList.add(new PatientInfo(values[0], values[1], values[2], values[3], values[4], values[5])); //Creates a new Patient and adds their symptoms 
-		
-				
 			}
 		
-			
-			//System.out.println(symptomsList);
-			
-			//System.out.println(symptomsList.get(1));
-			inputStream.close();
+			inputStream.close(); //Closes the Scanner class
 		}
 		
 		catch(FileNotFoundException e)
 		
 		{
 			e.printStackTrace();
-		
-		
 		}
-		//return symptomsList;
 
-		
 	}//End readFile()
 	
 	
-	
 	//Getters and setters
-	String getFileName() 
-	{
-		return fileName;
-	}
-	
-	
-	void setFileName(String fileName) 
-	{
-		
-		this.fileName = fileName;
-	}
-
-
 	String getData() 
 	{
 		return data;
@@ -133,8 +105,6 @@ public class FileProcessing
 	{
 		return symptomsList;
 	}
-
-
 
 	@SuppressWarnings("static-access")
 	public void setSymptomsList(ArrayList<PatientInfo> symptomsList) 

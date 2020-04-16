@@ -91,7 +91,7 @@ public class GUI extends JFrame
 					
 					accuracy.findAccuracy();
 
-					JOptionPane.showMessageDialog(getContentPane(),"The accuracy of this program is " +accuracy.getCorrect());
+					JOptionPane.showMessageDialog(getContentPane(),"The accuracy of this program is " +accuracy.getCorrect()+ "%");
 					
 				}
 				
@@ -152,6 +152,7 @@ public class GUI extends JFrame
 				{
 					chooseFile();
 					Control.setCsvFile(getFileName());
+					
 				}
 			}
 		});

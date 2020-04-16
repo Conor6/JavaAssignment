@@ -3,7 +3,7 @@ package MachineLearning;
 import java.util.ArrayList;
 import java.lang.Math;
 
-//Check calculation***
+
 
 public class Probability 
 {
@@ -16,344 +16,328 @@ public class Probability
 	String fromDZ;
 	
 	//Temperature Attributes
-	private float tempY = 0;
-	private float tempN = 0;
-	private float temperatureCool = 0;
-	private float temperatureNorm = 0;
-	private float temperatureHot = 0;
-	private float temperatureCoolCOVID19Y = 0;
-	private float temperatureCoolCOVID19N = 0;
-	private float temperatureNormCOVID19Y = 0;
-	private float temperatureNormCOVID19N = 0;
-	private float temperatureHotCOVID19Y = 0;
-	private float temperatureHotCOVID19N = 0;
+	private float tempY                   = 0;	//Stores the temperature probability for the COVID19 yes calculation
+	private float tempN                   = 0;	//Stores the temperature probability for the COVID19 no calculation
+	private float temperatureCool         = 0;	//Stores the count and probability of cool temperatures
+	private float temperatureNorm         = 0;	//Stores the count and probability of normal temperatures
+	private float temperatureHot          = 0;	///Stores the count and probability of hot temperatures
+	private float temperatureCoolCOVID19Y = 0;	//Stores the count and probability of Cool temperatures with COVID19
+	private float temperatureCoolCOVID19N = 0;	//Stores the count and probability of Cool temperatures without COVID19
+	private float temperatureNormCOVID19Y = 0;	//Stores the count and probability of Normal temperatures with COVID19
+	private float temperatureNormCOVID19N = 0;	//Stores the count and probability of Normal temperatures without COVID19
+	private float temperatureHotCOVID19Y  = 0;	//Stores the count and probability of Hot temperatures with COVID19
+	private float temperatureHotCOVID19N  = 0;	//Stores the count and probability of Hot temperatures without COVID19
 
 	
 	//Aches Attributes
-	private float achesY = 0;
-	private float achesN = 0;
-	private float achesYCOVID19Y = 0;
-	private float achesNCOVID19N = 0;
-	private float achesNCOVID19Y = 0;
-	private float achesYCOVID19N = 0;
+	private float achesY         = 0;			//Stores count for people WITH aches and stores the probability of having / not having aches WITH COVID19
+	private float achesN         = 0;			//Stores count for people WITHOUT aches and stores the probability of having / not having aches WITHOUT COVID19
+	private float achesYCOVID19Y = 0;			//Stores count and probability of HAVING aches WITH COVID19
+	private float achesNCOVID19N = 0;			//Stores count and probability of NOT HAVING aches WITHOUT COVID19
+	private float achesNCOVID19Y = 0;			//Stores count and probability of NOT HAVING aches WITH COVID19
+	private float achesYCOVID19N = 0;			//Stores count and probability of HAVING aches WITHOUT COVID19
 	
 	
 	//SoreThroat Attributes
-	private float soreThroatY = 0;
-	private float soreThroatN = 0;
-	private float soreThroatYCOVID19Y = 0;
-	private float soreThroatNCOVID19N = 0;
-	private float soreThroatNCOVID19Y = 0;
-	private float soreThroatYCOVID19N = 0;
+	private float soreThroatY         = 0;		//Stores count and probability of HAVING a sore throat
+	private float soreThroatN         = 0;		//Stores count and probability of NOT HAVING a sore throat
+	private float soreThroatYCOVID19Y = 0;		//Stores count and probability of HAVING a sore throat WITH COVID19
+	private float soreThroatNCOVID19N = 0;		//Stores count and probability of NOT HAVING a sore throat WITHOUT COVID19
+	private float soreThroatNCOVID19Y = 0;		//Stores count and probability of NOT HAVING a sore throat WITH COVID19
+	private float soreThroatYCOVID19N = 0;		//Stores count and probability of HAVING a sore throat WITHOUT COVID19
 	
 	
 	
 	//Cough Attributes
-	private float coughY = 0;
-	private float coughN = 0;
-	private float coughYCOVID19Y = 0;
-	private float coughNCOVID19N = 0;
-	private float coughYCOVID19N = 0;
-	private float coughNCOVID19Y = 0;
+	private float coughY         = 0;			//Stores count and probability of HAVING a cough
+	private float coughN         = 0;			//Stores count and probability of NOT HAVING a cough
+	private float coughYCOVID19Y = 0;			//Stores count and probability of HAVING a cough WITH COVID19
+	private float coughNCOVID19N = 0;			//Stores count and probability of NOT HAVING a cough WITHOUT COVID19
+	private float coughYCOVID19N = 0;			//Stores count and probability of HAVING a cough WITHOUT COVID19
+	private float coughNCOVID19Y = 0;			//Stores count and probability of NOT HAVING a cough WITH COVID19
 	
 	
 	//fromDZ Attributes
-	private float DZY = 0;
-	private float DZN = 0;
-	private float fromDZY = 0;
-	private float fromDZN = 0;
-	private float fromDZYCOVID19Y = 0;
-	private float fromDZNCOVID19N = 0;
-	private float fromDZYCOVID19N = 0;
-	private float fromDZNCOVID19Y = 0;
+	private float DZY = 0;						//Stores probability and count of HAVING travelled from a danger zone
+	private float DZN = 0;						//Stores probability and count of NOT HAVING travelled from a danger zone
+	private float fromDZY         = 0;			//Stores probability and count of HAVING travelled from a danger zone
+	private float fromDZN         = 0;			//Stores probability and count of NOT HAVING travelled from a danger zone
+	private float fromDZYCOVID19Y = 0;			//Stores probability and count of HAVING travelled from a danger zone and HAVING COVID19
+	private float fromDZNCOVID19N = 0;			//Stores probability and count of NOT HAVING travelled from a danger zone and NOT HAVING COVID19
+	private float fromDZYCOVID19N = 0;			//Stores probability and count of HAVING travelled from a danger zone and NOT HAVING COVID19
+	private float fromDZNCOVID19Y = 0;			//Stores probability and count of NOT HAVING travelled from a danger zone and HAVING COVID19
 	
 	
 	//hasCOVID19 Attributes
-	private float hasCOVID19Y = 0;
-	private float hasCOVID19N = 0;
+	private float hasCOVID19Y = 0;				//Stores the probability and count of HAVING COVID19
+	private float hasCOVID19N = 0;				//Stores the probability and count of HAVING COVID19
 	
 	
-	private float ansY = 0;
-	private float ansN = 0;
-	private float answer = 0;
+	private float ansY   = 0;					//Stores the probability of HAVING COVI19 after multiplying all the entered symptoms together
+	private float ansN   = 0;					//Stores the probability of HAVING COVI19 after multiplying all the entered symptoms together
+	private float answer = 0;					//Stores the percentage of HAVING COVID19
 
 
 	
 	public Probability(String temperature, String aches, String soreThroat, String cough, String fromDZ) 
 	{
-		
-		//FileProcessing findingProb = new FileProcessing("MLdata.csv");
-		
 		this.temperature = temperature;
-		this.aches = aches;
-		this.soreThroat = soreThroat;
-		this.cough = cough;
-		this.fromDZ = fromDZ;
+		this.aches       =       aches;
+		this.soreThroat  =  soreThroat;
+		this.cough       =       cough;
+		this.fromDZ      =      fromDZ;
 		
 		
 		//Temperature variables
-		this.setTemperatureCool(temperatureCool);
-		this.setTemperatureNorm(temperatureNorm);
-		this.setTemperatureHot(temperatureHot);
-		this.setTemperatureCoolCOVID19Y(temperatureCoolCOVID19Y);
-		this.setTemperatureCoolCOVID19N(temperatureCoolCOVID19N);
-		this.setTemperatureNormCOVID19Y(temperatureNormCOVID19Y);
-		this.setTemperatureNormCOVID19N(temperatureNormCOVID19N);
-		this.setTemperatureHotCOVID19Y(temperatureHotCOVID19Y);
-		this.setTemperatureHotCOVID19N(temperatureHotCOVID19N);
+		this.setTemperatureCool(getTemperatureCool());
+		this.setTemperatureNorm(getTemperatureNorm());
+		this.setTemperatureHot(getTemperatureHot());
+		this.setTemperatureCoolCOVID19Y(getTemperatureCoolCOVID19Y());
+		this.setTemperatureCoolCOVID19N(getTemperatureCoolCOVID19N());
+		this.setTemperatureNormCOVID19Y(getTemperatureNormCOVID19Y());
+		this.setTemperatureNormCOVID19N(getTemperatureNormCOVID19N());
+		this.setTemperatureHotCOVID19Y(getTemperatureHotCOVID19Y());
+		this.setTemperatureHotCOVID19N(getTemperatureHotCOVID19N());
 		
 		
 		//Aches variables
-		this.setAchesY(achesY);
-		this.setAchesN(achesN);
-		this.setAchesCOVID19Y(achesYCOVID19Y);
-		this.setAchesCOVID19N(achesNCOVID19N);
-		
+		this.setAchesY(getAchesY());
+		this.setAchesN(getAchesN());
+
 		
 		//Sore Throat variables
-		this.setSoreThroatY(soreThroatY);
-		this.setSoreThroatN(soreThroatN);
-		this.setSoreThroatCOVID19Y(soreThroatYCOVID19Y);
-		this.setSoreThroatCOVID19N(soreThroatNCOVID19N);
+		this.setSoreThroatY(getSoreThroatY());
+		this.setSoreThroatN(getSoreThroatN());
 		
 		
 		//Cough Variables
-		this.setCoughY(coughY);
-		this.setCoughN(coughN);
-		this.setCoughCOVID19Y(coughYCOVID19Y);
+		this.setCoughY(getCoughY());
+		this.setCoughN(getCoughN());
+		//this.setCoughCOVID19Y(getCoughYCOVID19Y());
 		
 		
 		//Travelled from Danger Zone Variables
-		this.setFromDZY(fromDZY);
-		this.setFromDZN(fromDZN);
-		this.setFromDZCOVID19Y(fromDZYCOVID19Y);
-		this.setFromDZCOVID19N(fromDZNCOVID19N);
+		this.setFromDZY(getFromDZY());
+		this.setFromDZN(getFromDZN());
 		
 		
 		//Does the patient have COVID19 virus variables
-		this.setHasCOVID19Y(hasCOVID19Y);
-		this.setHasCOVID19N(hasCOVID19N);
-		
+		this.setHasCOVID19Y(getHasCOVID19Y());
+		this.setHasCOVID19N(getHasCOVID19N());
 		
 	}
 
 	
+	//This method will count the occurance of each symptom in the list and store it in the appropriate variable
 	 public void count()
 	{
-		 
-		 GUI gui = new GUI();
-		
+		//Creating a new FileProcessing object to open the file and populate the probabilityList
 		FileProcessing findingProb = new FileProcessing(Control.getCsvFile());
-		
-		findingProb.openFile();
-			 
-		ArrayList<PatientInfo> probabilityList = new ArrayList<PatientInfo>();
-			 
+		findingProb.openFile(); 
+		ArrayList<PatientInfo> probabilityList = new ArrayList<PatientInfo>(); 
 		probabilityList = findingProb.getSymptomsList();
 		 
-		 
+		//Stores the size of the list
 		int size = probabilityList.size();
 		
 		
+		//For loop to loop through the file and increment each counter variable
 		for(int i = 0; i < size; i++)
 		 {
 			 
+			//tempHot returns a True value if the temperature value is hot, if it is then TemperatureHot is incremented by 1
 			 boolean tempHot = probabilityList.get(i).getTemperature().contains("hot");
 			 
 			 if(tempHot == true)
 			 {
-				temperatureHot++;
-				
+				setTemperatureHot(getTemperatureHot() + 1);
 			 }
 			 
-			 
+			//tempCool returns a True value if the temperature value is cool, if it is then TemperatureCool is incremented by 1
 			 boolean tempCool = probabilityList.get(i).getTemperature().contains("cool");
 			 
 			 if(tempCool == true)
 			 {
-				temperatureCool++;
+				setTemperatureCool(getTemperatureCool() + 1);
 			 }
 			 
-			 
+			//tempNorm returns a True value if the temperature value is normal, if it is then TemperatureNorm is incremented by 1
 			 boolean tempNorm = probabilityList.get(i).getTemperature().contains("normal");
 			 
 			 if(tempNorm == true)
 			 {
-				temperatureNorm++;
+				setTemperatureNorm(getTemperatureNorm() + 1);
 			 }
 			 
-			 
+			//hasAches returns a True value if the aches value is yes, if it is then achesY is incremented by 1, otherwise achesN is incremented by 1
 			 boolean hasAches = probabilityList.get(i).getAches().contains("yes");
 			 
 			 if(hasAches == true)
 			 {
-				achesY++;
+				setAchesY(getAchesY() + 1);
 			 }
 			 else
 			 {
-				 achesN++;
+				 setAchesN(getAchesN() + 1);
 			 }
 			 
-	
+			//hasSoreThroat returns a True value if the value is yes, if it is then soreThroatY is incremented by 1, otherwise soreThroatN is incremented by 1
 			 boolean hasSoreThroat = probabilityList.get(i).getSoreThroat().contains("yes");
 			 
 			 if(hasSoreThroat == true)
 			 {
 			
-				soreThroatY++;
+				setSoreThroatY(getSoreThroatY() + 1);
 			 }
 			 else
 			 {
-				 soreThroatN++;
+				 setSoreThroatN(getSoreThroatN() + 1);
 			 }
 			 
-	
+			 //hasCough returns a True value if the value is yes, if it is then hasCoughY is incremented by 1, otherwise hasCoughN is incremented by 1
 			 boolean hasCough = probabilityList.get(i).getCough().contains("yes");
 			 
 			 if(hasCough == true)
 			 {
-				coughY++;
-				
+				setCoughY(getCoughY() + 1);
 			 }
 			 else
 			 {
-				 coughN++;
+				 setCoughN(getCoughN() + 1);
 			 }
 			 
-			 
+			//fromDZ returns a True value if the value is yes, if it is then fromDZY is incremented by 1, otherwise fromDZN is incremented by 1
 			 boolean fromDZ = probabilityList.get(i).getTravelFromDZ().contains("yes");
 			 
 			 if(fromDZ == true)
 			 {
-			
-				fromDZY++;
-				
+				setFromDZY(getFromDZY() + 1);
 			 }
 			 else
 			 {
-				 fromDZN++;
+				 setFromDZN(getFromDZN() + 1);
 			 }
 			 
-			 
+			//hasCOVID19 returns a True value if the value is yes, if it is then hasCOVID19 is incremented by 1, otherwise hasCOVID19N is incremented by 1
 			 boolean hasCOVID19 = probabilityList.get(i).getHasCOVID19().contains("yes");
 			 
 			 if(hasCOVID19 == true)
 			 {
-				hasCOVID19Y++;
+				setHasCOVID19Y(getHasCOVID19Y() + 1);
 			 }
 			 else
 			 {
-				 hasCOVID19N++;
+				 setHasCOVID19N(getHasCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(hasCough == true & hasCOVID19 == true)
 			 {
-				 coughYCOVID19Y++;
+				 setCoughYCOVID19Y(getCoughYCOVID19Y() + 1);
 			 }
 			 else if(hasCough == false & hasCOVID19 == false)
 			 {
-				 coughNCOVID19N++;
+				 setCoughNCOVID19N(getCoughNCOVID19N() + 1);
 			 }
+			 
 			 
 			 if(hasCough == false & hasCOVID19 == true)
 			 {
-				 coughNCOVID19Y++;
+				 setCoughNCOVID19Y(getCoughNCOVID19Y() + 1);
 			 }
 			 else if(hasCough == true & hasCOVID19 == false)
 			 {
-				 coughYCOVID19N++;
+				 setCoughYCOVID19N(getCoughYCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(hasAches == true & hasCOVID19 == true)
 			 {
-				 achesYCOVID19Y++;
+				 setAchesYCOVID19Y(getAchesYCOVID19Y() + 1);
 			 }
 			 else if (hasAches == true & hasCOVID19 == false)
 			 {
-				 achesYCOVID19N++;
-				 
+				 setAchesYCOVID19N(getAchesYCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(hasAches == false & hasCOVID19 == true)
 			 {
-				 achesNCOVID19Y++;
+				 setAchesNCOVID19Y(getAchesNCOVID19Y() + 1);
 			 }
 			 else if(hasAches == false & hasCOVID19 == false)
 			 {
-				 achesNCOVID19N++;
+				 setAchesNCOVID19N(getAchesNCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(tempCool == true & hasCOVID19 == true)
 			 {
-				 temperatureCoolCOVID19Y++;
+				 setTemperatureCoolCOVID19Y(getTemperatureCoolCOVID19Y() + 1);
 			 }
 			 else if(tempCool == true & hasCOVID19 == false)
 			 {
-				 temperatureCoolCOVID19N++;
+				 setTemperatureCoolCOVID19N(getTemperatureCoolCOVID19N() + 1);
 			 }
 			 
 			
 			 if(tempNorm == true & hasCOVID19 == true)
 			 {
-				 temperatureNormCOVID19Y++;
+				 setTemperatureNormCOVID19Y(getTemperatureNormCOVID19Y() + 1);
 			 }
 			 else if(tempNorm == true & hasCOVID19 == false)
 			 {
-				 temperatureNormCOVID19N++;
+				 setTemperatureNormCOVID19N(getTemperatureNormCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(tempHot == true & hasCOVID19 == true)
 			 {
-				 temperatureHotCOVID19Y++;
+				 setTemperatureHotCOVID19Y(getTemperatureHotCOVID19Y() + 1);
 			 }
 			 else if(tempHot == true & hasCOVID19 == false)
 			 {
-				 temperatureHotCOVID19N++;
+				 setTemperatureHotCOVID19N(getTemperatureHotCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(hasSoreThroat == true & hasCOVID19 == true)
 			 {
-				 soreThroatYCOVID19Y++;
+				 setSoreThroatYCOVID19Y(getSoreThroatYCOVID19Y() + 1);
 			 }
 			 else if(hasSoreThroat == false & hasCOVID19 == false)
 			 {
-				 soreThroatNCOVID19N++;
+				 setSoreThroatNCOVID19N(getSoreThroatNCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(hasSoreThroat == false & hasCOVID19 == true)
 			 {
-				 soreThroatNCOVID19Y++;
+				 setSoreThroatNCOVID19Y(getSoreThroatNCOVID19Y() + 1);
 			 }
 			 else if(hasSoreThroat == true & hasCOVID19 == false)
 			 {
-				 soreThroatYCOVID19N++;
+				 setSoreThroatYCOVID19N(getSoreThroatYCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(fromDZ == true & hasCOVID19 == true)
 			 {
-				 fromDZYCOVID19Y++;
+				 setFromDZYCOVID19Y(getFromDZYCOVID19Y() + 1);
 			 }
 			 else if(fromDZ == false & hasCOVID19 == false)
 			 {
-				 fromDZNCOVID19N++;
+				 setFromDZNCOVID19N(getFromDZNCOVID19N() + 1);
 			 }
 			 
 			 
 			 if(fromDZ == false & hasCOVID19 == true)
 			 {
-				 fromDZNCOVID19Y++;
+				 setFromDZNCOVID19Y(getFromDZNCOVID19Y() + 1);
 			 }
 			 else if(fromDZ == true & hasCOVID19 == false)
 			 { 
-				 fromDZYCOVID19N++;
+				 setFromDZYCOVID19N(getFromDZYCOVID19N() + 1);
 			 }
 			
 			 
@@ -363,416 +347,247 @@ public class Probability
 	}//End count()
 	 
 	 
-	 
+	 //This method will use the counts from the count() mehtod to calculate the probability of having COVID19 based on the inputted symptoms
 	 public void findProb()
 	 {
 		 
 		 
-		 
+		 //Opening the Fileprocessor class
 		 FileProcessing findingProb = new FileProcessing(Control.getCsvFile());
-			
 		 findingProb.openFile();
-			 
-		ArrayList<PatientInfo> probabilityList = new ArrayList<PatientInfo>();
-			 
-		probabilityList = findingProb.getSymptomsList();
+		
+		 //Creating a new ArrayList
+		 ArrayList<PatientInfo> probabilityList = new ArrayList<PatientInfo>();
+		
+		 
+		 //Populating probability list with the data from the file
+		 probabilityList = findingProb.getSymptomsList();
 		 
 		 
 		 //Calculating the probability of having Cool, Norm and Hot temperatures if COVID19 is Yes
-		 
-		 temperatureCoolCOVID19Y = temperatureCoolCOVID19Y / hasCOVID19Y;
-		
-		 temperatureNormCOVID19Y = temperatureNormCOVID19Y / hasCOVID19Y;
-		 
-		 temperatureHotCOVID19Y = temperatureHotCOVID19Y / hasCOVID19Y;
+		 setTemperatureCoolCOVID19Y(getTemperatureCoolCOVID19Y() / getHasCOVID19Y());
+		 setTemperatureNormCOVID19Y(getTemperatureNormCOVID19Y() / getHasCOVID19Y());
+		 setTemperatureHotCOVID19Y(getTemperatureHotCOVID19Y() / getHasCOVID19Y());
 		 
 		 
 		//Calculating the probability of having Cool, Norm and Hot temperatures if COVID19 is No
-		temperatureCoolCOVID19N = temperatureCoolCOVID19N / hasCOVID19N;
-		
-		temperatureNormCOVID19N = temperatureNormCOVID19N / hasCOVID19N;
-		
-		temperatureHotCOVID19N = temperatureHotCOVID19N / hasCOVID19N;
+		setTemperatureCoolCOVID19N(getTemperatureCoolCOVID19N() / getHasCOVID19N());
+		setTemperatureNormCOVID19N(getTemperatureNormCOVID19N() / getHasCOVID19N());
+		setTemperatureHotCOVID19N(getTemperatureHotCOVID19N() / getHasCOVID19N());
 		
 		
 		//Calculating the probability of having Aches if COVID19 is Yes
-		achesYCOVID19Y = achesYCOVID19Y / hasCOVID19Y;
-		achesNCOVID19Y = achesNCOVID19Y / hasCOVID19Y;
+		setAchesYCOVID19Y(getAchesYCOVID19Y() / getHasCOVID19Y());
+		setAchesNCOVID19Y(getAchesNCOVID19Y() / getHasCOVID19Y());
 		
 		//Calculating the probability of having Aches if COVID19 is No
-		achesYCOVID19N = achesYCOVID19N / hasCOVID19N;
-		achesNCOVID19N = achesNCOVID19N / hasCOVID19N;
+		setAchesYCOVID19N(getAchesYCOVID19N() / getHasCOVID19N());
+		setAchesNCOVID19N(getAchesNCOVID19N() / getHasCOVID19N());
 		
 		//Calculating the probability of having a Sore Throat if COVI19 is Yes
-		soreThroatYCOVID19Y = soreThroatYCOVID19Y / hasCOVID19Y;
-		soreThroatNCOVID19Y = soreThroatNCOVID19Y / hasCOVID19Y;
+		setSoreThroatYCOVID19Y(getSoreThroatYCOVID19Y() / getHasCOVID19Y());
+		setSoreThroatNCOVID19Y(getSoreThroatNCOVID19Y() / getHasCOVID19Y());
 		
 	
 		//Calculating the probability of having a Sore Throat if COVI19 is No
-		soreThroatYCOVID19N = soreThroatYCOVID19N / hasCOVID19N;
-		soreThroatNCOVID19N = soreThroatNCOVID19N / hasCOVID19N;
+		setSoreThroatYCOVID19N(getSoreThroatYCOVID19N() / getHasCOVID19N());
+		setSoreThroatNCOVID19N(getSoreThroatNCOVID19N() / getHasCOVID19N());
 		
 		
 		//Calculating the probability of having a Cough if COVID19 is Yes
-		coughYCOVID19Y = coughYCOVID19Y / hasCOVID19Y;
-		coughNCOVID19Y = coughNCOVID19Y / hasCOVID19Y;
+		setCoughYCOVID19Y(getCoughYCOVID19Y() / getHasCOVID19Y());
+		setCoughNCOVID19Y(getCoughNCOVID19Y() / getHasCOVID19Y());
 		
 		
 		//Calculating the probability of having a Cough if COVID19 is No
-		coughYCOVID19N = coughYCOVID19N / hasCOVID19N;
-		coughNCOVID19N = coughNCOVID19N / hasCOVID19N;
+		setCoughYCOVID19N(getCoughYCOVID19N() / getHasCOVID19N());
+		setCoughNCOVID19N(getCoughNCOVID19N() / getHasCOVID19N());
 		
 		
 		//Calculating the probability of having travelled to a DZ if COVID19 is Yes
-		fromDZYCOVID19Y = fromDZYCOVID19Y / hasCOVID19Y;
-		fromDZNCOVID19Y = fromDZNCOVID19Y / hasCOVID19Y;
+		setFromDZYCOVID19Y(getFromDZYCOVID19Y() / getHasCOVID19Y());
+		setFromDZNCOVID19Y(getFromDZNCOVID19Y() / getHasCOVID19Y());
 		
 		
 		
 		//Calculating the probability of having travelled to a DZ if COVID19 is No
-		fromDZYCOVID19N = fromDZYCOVID19N / hasCOVID19N;
-		fromDZNCOVID19N = fromDZNCOVID19N / hasCOVID19N;
+		setFromDZYCOVID19N(getFromDZYCOVID19N() / getHasCOVID19N());
+		setFromDZNCOVID19N(getFromDZNCOVID19N() / getHasCOVID19N());
 		
 		
 		//Calculating the probability of having COVID19 Yes
-		hasCOVID19Y = (hasCOVID19Y / (float)probabilityList.size());
+		setHasCOVID19Y((getHasCOVID19Y() / (float)probabilityList.size()));
 		
 		
 		//Calculating the probability of having COVID19 No
-		hasCOVID19N = hasCOVID19N / (float)probabilityList.size();
+		setHasCOVID19N(getHasCOVID19N() / (float)probabilityList.size());
 		
 		
+		//If the temperature is cool the probability of having COVID19 with a cool temp is put in tempY
+		//If the temperature is cool the probability of not having COVI19 with a cool temp is put in tempN
 		if(temperature.contains( "cool"))
 		{
-			tempY = temperatureCoolCOVID19Y;
-			tempN = temperatureCoolCOVID19N;
+			setTempY(getTemperatureCoolCOVID19Y());
+			setTempN(getTemperatureCoolCOVID19N());
 		}
 		
-		
+		//If the temperature is normal the probability of having COVID19 with a cool temp is put in tempY
+		//If the temperature is normal the probability of not having COVI19 with a cool temp is put in tempN
 		if(temperature.contains( "normal"))
 		{
-			tempY = temperatureNormCOVID19Y;
-			tempN = temperatureNormCOVID19N;
+			setTempY(getTemperatureNormCOVID19Y());
+			setTempN(getTemperatureNormCOVID19N());
 		}
 		
-		
+		//If the temperature is hot the probability of having COVID19 with a cool temp is put in tempY
+		//If the temperature is hot the probability of not having COVI19 with a cool temp is put in tempN
 		if(temperature.contains( "hot"))
 		{
-			
-			tempY = temperatureHotCOVID19Y;
-		
-			tempN = temperatureHotCOVID19N;
+			setTempY(getTemperatureHotCOVID19Y());
+			setTempN(getTemperatureHotCOVID19N());
 		}
 		
-		
+		//If the patient has aches the probability of them having COVID19 with aches is put into achesY
+		//If the patient doesn't have aches the probability of them not having COVID19 with aches is put into achesN
 		if(aches.contains("yes"))
 		{
-			
-			 achesY = achesYCOVID19Y;
-			 achesN = achesYCOVID19N;
+			 setAchesY(getAchesYCOVID19Y());
+			 setAchesN(getAchesYCOVID19N());
 		}
-		else
+		else 
 		{
-			 achesY = achesNCOVID19Y;
-			 achesN = achesNCOVID19N;
+			 setAchesY(getAchesNCOVID19Y());
+			 setAchesN(getAchesNCOVID19N());
 		}
 		
 		
 		if(soreThroat.contains("yes"))
 		{
-			
-			 soreThroatY = soreThroatYCOVID19Y;
-			 soreThroatN = soreThroatYCOVID19N;
+			 setSoreThroatY(getSoreThroatYCOVID19Y());
+			 setSoreThroatN(getSoreThroatYCOVID19N());
 		}
 		else
 		{
-			
-			 soreThroatY = soreThroatNCOVID19Y;
-			 soreThroatN = soreThroatNCOVID19N;
+			 setSoreThroatY(getSoreThroatNCOVID19Y());
+			 setSoreThroatN(getSoreThroatNCOVID19N());
 		}
 	
 		
 		if(cough.contains("yes"))
 		{
-			 coughY = coughYCOVID19Y;
-			 coughN = coughYCOVID19N;
+			 setCoughY(getCoughYCOVID19Y());
+			 setCoughN(getCoughYCOVID19N());
 		}
 		else
 		{
-			 coughY = coughNCOVID19Y;
-			 coughN = coughNCOVID19N;
+			 setCoughY(getCoughNCOVID19Y());
+			 setCoughN(getCoughNCOVID19N());
 		}
 		
 		
 		if(fromDZ.contains("yes"))
 		{
-			 DZY = fromDZYCOVID19Y;
-			 DZN = fromDZYCOVID19N;
-	
+			 setDZY(getFromDZYCOVID19Y());
+			 setDZN(getFromDZYCOVID19N());
 		}
 		else
 		{
-			 DZY = fromDZNCOVID19Y;
-			 DZN = fromDZNCOVID19N;
+			 setDZY(getFromDZNCOVID19Y());
+			 setDZN(getFromDZNCOVID19N());
 		}
 		
 		
 		//Calculating COVID19Y
-		ansY = (tempY * achesY * soreThroatY * coughY * DZY * hasCOVID19Y);
+		setAnsY((getTempY() * getAchesY() * getSoreThroatY() * getCoughY() * getDZY() * getHasCOVID19Y()));
 		 
 		
 		//Calculating COVID19N
+		setAnsN(getTempN() * getAchesN() * getSoreThroatN() * getCoughN() * getDZN() * (getHasCOVID19N()));
 		
-		ansN = tempN * achesN * soreThroatN * coughN * DZN * (hasCOVID19N);
 		
-		setAnswer(ansY/(ansN + ansY));
+		//Calculating the probability of having COVI19
+		setAnswer(getAnsY()/(getAnsN() + getAnsY()));
+		
+		//Multiplying by 100 to get a percentage
 		setAnswer(getAnswer() *100);
 		
+		//Rounding the percentage so it is more readable
 		setAnswer(Math.round(getAnswer()));
 		
-		//System.out.println(getAnswer());
-		
 	 }
-	
-	//Setters and getters
-	private float getTemperatureCool() 
-	{
+
+	 //Setters and Getters
+	public float getTempY() {
+		return tempY;
+	}
+
+
+	public void setTempY(float tempY) {
+		this.tempY = tempY;
+	}
+
+
+	public float getTempN() {
+		return tempN;
+	}
+
+
+	public void setTempN(float tempN) {
+		this.tempN = tempN;
+	}
+
+
+	public float getTemperatureCool() {
 		return temperatureCool;
 	}
 
 
-	private void setTemperatureCool(float temperatureCool) 
-	{
+	public void setTemperatureCool(float temperatureCool) {
 		this.temperatureCool = temperatureCool;
 	}
 
 
-	private float getTemperatureNorm() 
-	{
+	public float getTemperatureNorm() {
 		return temperatureNorm;
 	}
 
 
-	private void setTemperatureNorm(float temperatureNorm) 
-	{
+	public void setTemperatureNorm(float temperatureNorm) {
 		this.temperatureNorm = temperatureNorm;
 	}
 
 
-	private float getTemperatureHot() 
-	{
+	public float getTemperatureHot() {
 		return temperatureHot;
 	}
 
 
-	private void setTemperatureHot(float temperatureHot) 
-	{
+	public void setTemperatureHot(float temperatureHot) {
 		this.temperatureHot = temperatureHot;
 	}
 
 
-	private float getAchesY() 
-	{
-		return achesY;
+	public float getTemperatureCoolCOVID19Y() {
+		return temperatureCoolCOVID19Y;
 	}
 
 
-	private void setAchesY(float achesY) 
-	{
-		this.achesY = achesY;
+	public void setTemperatureCoolCOVID19Y(float temperatureCoolCOVID19Y) {
+		this.temperatureCoolCOVID19Y = temperatureCoolCOVID19Y;
 	}
 
 
-	private float getAchesN() 
-	{
-		return achesN;
+	private float getTemperatureCoolCOVID19N() {
+		return temperatureCoolCOVID19N;
 	}
 
 
-	private void setAchesN(float achesN) 
-	{
-		this.achesN = achesN;
+	private void setTemperatureCoolCOVID19N(float temperatureCoolCOVID19N) {
+		this.temperatureCoolCOVID19N = temperatureCoolCOVID19N;
 	}
 
 
-	private float getSoreThroatY() 
-	{
-		return soreThroatY;
-	}
-
-
-	private void setSoreThroatY(float soreThroatY) 
-	{
-		this.soreThroatY = soreThroatY;
-	}
-
-
-	private float getSoreThroatN() 
-	{
-		return soreThroatN;
-	}
-
-
-	private void setSoreThroatN(float soreThroatN) 
-	{
-		this.soreThroatN = soreThroatN;
-	}
-
-
-	private float getCoughY() 
-	{
-		return coughY;
-	}
-
-
-	private void setCoughY(float coughY) 
-	{
-		this.coughY = coughY;
-	}
-
-
-	private float getCoughN() 
-	{
-		return coughN;
-	}
-
-
-	private void setCoughN(float coughN) 
-	{
-		this.coughN = coughN;
-	}
-
-
-	private float getFromDZY() 
-	{
-		return fromDZY;
-	}
-
-
-	private void setFromDZY(float fromDZY) 
-	{
-		this.fromDZY = fromDZY;
-	}
-
-
-	private float getFromDZN() 
-	{
-		return fromDZN;
-	}
-
-
-	private void setFromDZN(float fromDZN) 
-	{
-		this.fromDZN = fromDZN;
-	}
-
-
-	private float getHasCOVID19Y() 
-	{
-		return hasCOVID19Y;
-	}
-
-
-	private void setHasCOVID19Y(float hasCOVID19Y) 
-	{
-		this.hasCOVID19Y = hasCOVID19Y;
-	}
-
-
-	private float getHasCOVID19N() 
-	{
-		return hasCOVID19N;
-	}
-
-
-	private void setHasCOVID19N(float hasCOVID19N) 
-	{
-		this.hasCOVID19N = hasCOVID19N;
-	}
-
-
-	private float getAchesCOVID19Y() {
-		return achesYCOVID19Y;
-	}
-
-
-	private void setAchesCOVID19Y(float achesCOVID19Y) {
-		this.achesYCOVID19Y = achesCOVID19Y;
-	}
-
-
-	private float getAchesCOVID19N() {
-		return achesNCOVID19N;
-	}
-
-
-	private void setAchesCOVID19N(float achesCOVID19N) {
-		this.achesNCOVID19N = achesCOVID19N;
-	}
-
-
-	private float getSoreThroatCOVID19Y() {
-		return soreThroatYCOVID19Y;
-	}
-
-
-	private void setSoreThroatCOVID19Y(float soreThroatCOVID19Y) {
-		this.soreThroatYCOVID19Y = soreThroatCOVID19Y;
-	}
-
-
-	float getSoreThroatCOVID19N() {
-		return soreThroatNCOVID19N;
-	}
-
-
-	void setSoreThroatCOVID19N(float soreThroatCOVID19N) {
-		this.soreThroatNCOVID19N = soreThroatCOVID19N;
-	}
-
-
-	float getCoughCOVID19Y() {
-		return coughYCOVID19Y;
-	}
-
-
-	void setCoughCOVID19Y(float coughCOVID19Y) {
-		this.coughYCOVID19Y = coughCOVID19Y;
-	}
-
-
-	float getCoughCOVID19N() {
-		return coughYCOVID19N;
-	}
-
-
-	void setCoughCOVID19N(float coughCOVID19N) {
-		this.coughNCOVID19N = coughCOVID19N;
-	}
-
-
-	float getFromDZCOVID19Y() {
-		return fromDZYCOVID19Y;
-	}
-
-
-	private void setFromDZCOVID19Y(float fromDZCOVID19Y) {
-		this.fromDZYCOVID19Y = fromDZCOVID19Y;
-	}
-
-
-	private float getFromDZCOVID19N() {
-		return fromDZNCOVID19N;
-	}
-
-	private void setFromDZCOVID19N(float fromDZCOVID19N)
-	{
-		this.fromDZNCOVID19N = fromDZCOVID19N;
-	}
-
-
-	public float getTemperatureNormCOVID19Y() 
-	{
+	public float getTemperatureNormCOVID19Y() {
 		return temperatureNormCOVID19Y;
 	}
 
@@ -790,7 +605,6 @@ public class Probability
 	public void setTemperatureNormCOVID19N(float temperatureNormCOVID19N) {
 		this.temperatureNormCOVID19N = temperatureNormCOVID19N;
 	}
-
 
 
 	public float getTemperatureHotCOVID19Y() {
@@ -813,32 +627,313 @@ public class Probability
 	}
 
 
-	private float getTemperatureCoolCOVID19Y() {
-		return temperatureCoolCOVID19Y;
+	public float getAchesY() {
+		return achesY;
 	}
 
 
-	private void setTemperatureCoolCOVID19Y(float temperatureCoolCOVID19Y) {
-		this.temperatureCoolCOVID19Y = temperatureCoolCOVID19Y;
+	public void setAchesY(float achesY) {
+		this.achesY = achesY;
 	}
 
 
-	private float getTemperatureCoolCOVID19N() {
-		return temperatureCoolCOVID19N;
-	}
-
-	private void setTemperatureCoolCOVID19N(float temperatureCoolCOVID19N) {
-		this.temperatureCoolCOVID19N = temperatureCoolCOVID19N;
+	public float getAchesN() {
+		return achesN;
 	}
 
 
-	float getAnswer() {
+	public void setAchesN(float achesN) {
+		this.achesN = achesN;
+	}
+
+
+	public float getAchesYCOVID19Y() {
+		return achesYCOVID19Y;
+	}
+
+
+	public void setAchesYCOVID19Y(float achesYCOVID19Y) {
+		this.achesYCOVID19Y = achesYCOVID19Y;
+	}
+
+
+	public float getAchesNCOVID19N() {
+		return achesNCOVID19N;
+	}
+
+
+	public void setAchesNCOVID19N(float achesNCOVID19N) {
+		this.achesNCOVID19N = achesNCOVID19N;
+	}
+
+
+	public float getAchesNCOVID19Y() {
+		return achesNCOVID19Y;
+	}
+
+
+	public void setAchesNCOVID19Y(float achesNCOVID19Y) {
+		this.achesNCOVID19Y = achesNCOVID19Y;
+	}
+
+
+	public float getAchesYCOVID19N() {
+		return achesYCOVID19N;
+	}
+
+
+	public void setAchesYCOVID19N(float achesYCOVID19N) {
+		this.achesYCOVID19N = achesYCOVID19N;
+	}
+
+
+	public float getSoreThroatY() {
+		return soreThroatY;
+	}
+
+
+	public void setSoreThroatY(float soreThroatY) {
+		this.soreThroatY = soreThroatY;
+	}
+
+
+	public float getSoreThroatN() {
+		return soreThroatN;
+	}
+
+
+	public void setSoreThroatN(float soreThroatN) {
+		this.soreThroatN = soreThroatN;
+	}
+
+
+	public float getSoreThroatYCOVID19Y() {
+		return soreThroatYCOVID19Y;
+	}
+
+
+	public void setSoreThroatYCOVID19Y(float soreThroatYCOVID19Y) {
+		this.soreThroatYCOVID19Y = soreThroatYCOVID19Y;
+	}
+
+
+	public float getSoreThroatNCOVID19N() {
+		return soreThroatNCOVID19N;
+	}
+
+
+	public void setSoreThroatNCOVID19N(float soreThroatNCOVID19N) {
+		this.soreThroatNCOVID19N = soreThroatNCOVID19N;
+	}
+
+
+	public float getSoreThroatNCOVID19Y() {
+		return soreThroatNCOVID19Y;
+	}
+
+
+	public void setSoreThroatNCOVID19Y(float soreThroatNCOVID19Y) {
+		this.soreThroatNCOVID19Y = soreThroatNCOVID19Y;
+	}
+
+
+	public float getSoreThroatYCOVID19N() {
+		return soreThroatYCOVID19N;
+	}
+
+
+	public void setSoreThroatYCOVID19N(float soreThroatYCOVID19N) {
+		this.soreThroatYCOVID19N = soreThroatYCOVID19N;
+	}
+
+
+	public float getCoughY() {
+		return coughY;
+	}
+
+
+	public void setCoughY(float coughY) {
+		this.coughY = coughY;
+	}
+
+
+	public float getCoughN() {
+		return coughN;
+	}
+
+
+	public void setCoughN(float coughN) {
+		this.coughN = coughN;
+	}
+
+
+	public float getCoughYCOVID19Y() {
+		return coughYCOVID19Y;
+	}
+
+
+	public void setCoughYCOVID19Y(float coughYCOVID19Y) {
+		this.coughYCOVID19Y = coughYCOVID19Y;
+	}
+
+
+	public float getCoughNCOVID19N() {
+		return coughNCOVID19N;
+	}
+
+
+	public void setCoughNCOVID19N(float coughNCOVID19N) {
+		this.coughNCOVID19N = coughNCOVID19N;
+	}
+
+
+	public float getCoughYCOVID19N() {
+		return coughYCOVID19N;
+	}
+
+
+	public void setCoughYCOVID19N(float coughYCOVID19N) {
+		this.coughYCOVID19N = coughYCOVID19N;
+	}
+
+
+	public float getCoughNCOVID19Y() {
+		return coughNCOVID19Y;
+	}
+
+
+	public void setCoughNCOVID19Y(float coughNCOVID19Y) {
+		this.coughNCOVID19Y = coughNCOVID19Y;
+	}
+
+
+	public float getDZY() {
+		return DZY;
+	}
+
+
+	public void setDZY(float dZY) {
+		DZY = dZY;
+	}
+
+
+	public float getDZN() {
+		return DZN;
+	}
+
+
+	public void setDZN(float dZN) {
+		DZN = dZN;
+	}
+
+
+	public float getFromDZY() {
+		return fromDZY;
+	}
+
+
+	public void setFromDZY(float fromDZY) {
+		this.fromDZY = fromDZY;
+	}
+
+
+	public float getFromDZN() {
+		return fromDZN;
+	}
+
+
+	public void setFromDZN(float fromDZN) {
+		this.fromDZN = fromDZN;
+	}
+
+
+	public float getFromDZYCOVID19Y() {
+		return fromDZYCOVID19Y;
+	}
+
+
+	public void setFromDZYCOVID19Y(float fromDZYCOVID19Y) {
+		this.fromDZYCOVID19Y = fromDZYCOVID19Y;
+	}
+
+
+	public float getFromDZNCOVID19N() {
+		return fromDZNCOVID19N;
+	}
+
+
+	public void setFromDZNCOVID19N(float fromDZNCOVID19N) {
+		this.fromDZNCOVID19N = fromDZNCOVID19N;
+	}
+
+
+	public float getFromDZYCOVID19N() {
+		return fromDZYCOVID19N;
+	}
+
+
+	public void setFromDZYCOVID19N(float fromDZYCOVID19N) {
+		this.fromDZYCOVID19N = fromDZYCOVID19N;
+	}
+
+
+	public float getFromDZNCOVID19Y() {
+		return fromDZNCOVID19Y;
+	}
+
+
+	public void setFromDZNCOVID19Y(float fromDZNCOVID19Y) {
+		this.fromDZNCOVID19Y = fromDZNCOVID19Y;
+	}
+
+
+	public float getHasCOVID19Y() {
+		return hasCOVID19Y;
+	}
+
+
+	public void setHasCOVID19Y(float hasCOVID19Y) {
+		this.hasCOVID19Y = hasCOVID19Y;
+	}
+
+
+	public float getHasCOVID19N() {
+		return hasCOVID19N;
+	}
+
+
+	public void setHasCOVID19N(float hasCOVID19N) {
+		this.hasCOVID19N = hasCOVID19N;
+	}
+
+
+	public float getAnsY() {
+		return ansY;
+	}
+
+
+	public void setAnsY(float ansY) {
+		this.ansY = ansY;
+	}
+
+
+	public float getAnsN() {
+		return ansN;
+	}
+
+
+	public void setAnsN(float ansN) {
+		this.ansN = ansN;
+	}
+
+
+	public float getAnswer() {
 		return answer;
 	}
 
 
-	private void setAnswer(float answer) {
+	public void setAnswer(float answer) {
 		this.answer = answer;
 	}
-
 }
+

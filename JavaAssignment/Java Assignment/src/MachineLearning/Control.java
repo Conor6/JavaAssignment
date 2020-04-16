@@ -6,35 +6,20 @@ package MachineLearning;
 public class Control 
 {
 
-	private static String csvFile = "MLdata.csv";
+	private static String csvFile = "MLdata.csv"; //This is used to read in the file into the file processor. It is also used to allow the user to change test file
 	
 	public static void main(String[] args) 
 	{
 		
-		
-		FileProcessing myFileStuff = new FileProcessing(getCsvFile()); 
-		
-		
 		GUI homeScreen = new GUI();
-		homeScreen.setVisible(true);
-		
-		//FileProcessing myFileStuff = new FileProcessing("MLdata.csv");
-		//myFileStuff.openFile();
-		//myFileStuff.readFile();
-		//Probability prob = new Probability("normal", "no", "no", "no", "yes");
-		//prob.count();
-		//prob.findProb();
-		//Algorithm firstCount = new Algorithm("MLdata.csv");
-		//firstCount.counting();
-		
-		
-		//TestAccuracy test = new TestAccuracy();
-		
-		//test.findAccuracy();
+		homeScreen.setVisible(true); //Opens the GUI when the program is started
 		
 	}
 
-	public static String getCsvFile() {
+	
+	//Getter and Setter for csvFile
+	public static String getCsvFile() 
+	{
 		return csvFile;
 	}
 

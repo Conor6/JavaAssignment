@@ -26,7 +26,6 @@ public class PatientInfo
 		this.setTravelFromDZ(travelFromDZ);
 		this.setHasCOVID19(hasCOVID19);
 		
-		
 	}
 
 	
@@ -39,11 +38,7 @@ public class PatientInfo
 	
 	
 
-///////////////////////////////////////////////////////////////////Getters and Setters for the Attributes//////////////////////////////////////////////////////////////////
-	
-	
-	
-	//Temperature Getter and Setter
+//Getters and Setters
 	public String getTemperature() 
 	{
 		return temperature;
@@ -54,11 +49,8 @@ public class PatientInfo
 	{
 		this.temperature = temperature;
 	}
-
-
-
 	
-	//Aches Getter and Setter
+	
 	String getAches() 
 	{
 		return aches;
@@ -71,8 +63,6 @@ public class PatientInfo
 	}
 
 
-	
-	//Sore Throat Getter and Setter
 	String getSoreThroat() 
 	{
 		return soreThroat;
@@ -84,10 +74,6 @@ public class PatientInfo
 		this.soreThroat = soreThroat;
 	}
 
-
-	
-	
-	//Travel fromDZ Getter and Setter
 	String getTravelFromDZ() 
 	{
 		return travelFromDZ;
@@ -99,9 +85,6 @@ public class PatientInfo
 		this.travelFromDZ = travelFromDZ;
 	}
 
-
-	
-	//HasCOVID19 Getter and Setter
 	String getHasCOVID19() 
 	{
 		return hasCOVID19;
@@ -113,9 +96,6 @@ public class PatientInfo
 		this.hasCOVID19 = hasCOVID19;
 	}
 
-
-	
-	//Cough Getter and Setter
 	String getCough() 
 	{
 		return cough;
@@ -127,8 +107,4 @@ public class PatientInfo
 		this.cough = cough;
 	}
 
-
-
-	
-	
-}
+}//End class
