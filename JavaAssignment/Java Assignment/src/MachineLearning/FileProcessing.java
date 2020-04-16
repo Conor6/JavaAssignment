@@ -33,7 +33,7 @@ public class FileProcessing
 	
 	void openFile()
 	{
-		setDataFile(new File(getFileName()));
+		setDataFile(new File(Control.getCsvFile()));
 	}
 	
 	

@@ -6,8 +6,14 @@ package MachineLearning;
 public class Control 
 {
 
+	private static String csvFile = "MLdata.csv";
+	
 	public static void main(String[] args) 
 	{
+		
+		
+		FileProcessing myFileStuff = new FileProcessing(getCsvFile()); 
+		
 		
 		GUI homeScreen = new GUI();
 		homeScreen.setVisible(true);
@@ -22,10 +28,19 @@ public class Control
 		//firstCount.counting();
 		
 		
-		TestAccuracy test = new TestAccuracy();
+		//TestAccuracy test = new TestAccuracy();
 		
-		test.findAccuracy();
+		//test.findAccuracy();
 		
+	}
+
+	public static String getCsvFile() {
+		return csvFile;
+	}
+
+	public static void setCsvFile(String csvFile) 
+	{
+		Control.csvFile = csvFile;
 	}
 
 }

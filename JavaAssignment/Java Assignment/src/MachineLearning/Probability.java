@@ -140,8 +140,10 @@ public class Probability
 	
 	 public void count()
 	{
+		 
+		 GUI gui = new GUI();
 		
-		FileProcessing findingProb = new FileProcessing("MLdata.csv");
+		FileProcessing findingProb = new FileProcessing(Control.getCsvFile());
 		
 		findingProb.openFile();
 			 
@@ -365,7 +367,9 @@ public class Probability
 	 public void findProb()
 	 {
 		 
-		 FileProcessing findingProb = new FileProcessing("MLdata.csv");
+		 
+		 
+		 FileProcessing findingProb = new FileProcessing(Control.getCsvFile());
 			
 		 findingProb.openFile();
 			 

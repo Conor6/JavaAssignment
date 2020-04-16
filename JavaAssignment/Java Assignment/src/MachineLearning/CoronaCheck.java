@@ -93,8 +93,8 @@ public class CoronaCheck extends JFrame {
 					if(getCounter() > 4)
 					{
 						
-					
-						FileProcessing myFileStuff = new FileProcessing("MLdata.csv");
+						
+						FileProcessing myFileStuff = new FileProcessing(Control.getCsvFile());
 						
 						myFileStuff.openFile();
 						

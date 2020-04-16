@@ -65,7 +65,7 @@ public class TestAccuracy
 		private float hasCOVID19Y = 0;
 		private float hasCOVID19N = 0;
 		
-		float Correct;
+		private float Correct;
 		
 		
 		public TestAccuracy() 
@@ -122,13 +122,16 @@ public class TestAccuracy
 			
 		}
 
-
-
 		
 		public void findAccuracy()
 		{
 			
-			FileProcessing findAccuracy = new FileProcessing("MLdata.csv");
+			setCorrect(0);
+			
+			
+			
+			
+			FileProcessing findAccuracy = new FileProcessing(Control.getCsvFile());
 			
 			findAccuracy.openFile();
 			
@@ -428,6 +431,20 @@ public class TestAccuracy
 		private void setTemperatureCool(float temperatureCool2) {
 			// TODO Auto-generated method stub
 			
+		}
+
+
+
+
+		float getCorrect() {
+			return Correct;
+		}
+
+
+
+
+		void setCorrect(float correct) {
+			Correct = correct;
 		}
 
 		
