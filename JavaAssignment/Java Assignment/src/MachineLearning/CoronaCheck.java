@@ -42,6 +42,7 @@ public class CoronaCheck extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 462);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -151,6 +152,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Cool temperature
 		JRadioButton Cool = new JRadioButton("Cool");
+		Cool.setBackground(new Color(135, 206, 235));
 		Cool.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -171,6 +173,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Normal Temperature
 		JRadioButton Normal = new JRadioButton("Normal");
+		Normal.setBackground(new Color(135, 206, 235));
 		Normal.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -193,6 +196,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for hot temperature
 		JRadioButton Hot = new JRadioButton("Hot");
+		Hot.setBackground(new Color(135, 206, 235));
 		Hot.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -214,6 +218,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Aches Yes
 		JRadioButton achesYes = new JRadioButton("Yes");
+		achesYes.setBackground(new Color(135, 206, 235));
 		achesYes.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -235,6 +240,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Aches no
 		JRadioButton achesNo = new JRadioButton("No");
+		achesNo.setBackground(new Color(135, 206, 235));
 		achesNo.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -250,11 +256,12 @@ public class CoronaCheck extends JFrame {
 		
 		
 		buttonGroup_1.add(achesNo);
-		achesNo.setBounds(168, 158, 109, 23);
+		achesNo.setBounds(168, 158, 79, 23);
 		contentPane.add(achesNo);
 		
 		//Radio button for SoreThroat Yes
 		JRadioButton soreThroatYes = new JRadioButton("Yes");
+		soreThroatYes.setBackground(new Color(135, 206, 235));
 		soreThroatYes.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -274,6 +281,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for SoreThroat No
 		JRadioButton soreThroatNo = new JRadioButton("No");
+		soreThroatNo.setBackground(new Color(135, 206, 235));
 		soreThroatNo.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -293,6 +301,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio for Cough Yes
 		JRadioButton coughYes = new JRadioButton("Yes");
+		coughYes.setBackground(new Color(135, 206, 235));
 		coughYes.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -313,6 +322,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Cough No
 		JRadioButton coughNo = new JRadioButton("No");
+		coughNo.setBackground(new Color(135, 206, 235));
 		coughNo.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -331,6 +341,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Been to DZ Yes
 		JRadioButton DZYes = new JRadioButton("Yes");
+		DZYes.setBackground(new Color(135, 206, 235));
 		DZYes.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -348,6 +359,7 @@ public class CoronaCheck extends JFrame {
 		
 		//Radio button for Been to DZ No
 		JRadioButton DZNo = new JRadioButton("No");
+		DZNo.setBackground(new Color(135, 206, 235));
 		DZNo.addActionListener(new ActionListener() 
 		{
 			public void actionPerformed(ActionEvent myEvent) 

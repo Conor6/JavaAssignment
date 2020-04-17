@@ -543,7 +543,6 @@ public class Probability
 			 setDZN(getFromDZNCOVID19N());
 		}
 		
-		
 		//Calculating COVID19Y
 		setAnsY((getTempY() * getAchesY() * getSoreThroatY() * getCoughY() * getDZY() * getHasCOVID19Y()));
 		 

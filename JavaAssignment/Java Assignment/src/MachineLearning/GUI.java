@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.JPanel;
 
 
 @SuppressWarnings("serial")
@@ -27,20 +28,21 @@ public class GUI extends JFrame
 	 */
 	public GUI() 
 	{
+		getContentPane().setFont(new Font("Arial Black", Font.PLAIN, 14));
 		
 		
 		
 		
-		getContentPane().setBackground(Color.WHITE);
+		getContentPane().setBackground(new Color(135, 206, 235));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 462);
 		getContentPane().setLayout(null);
 		
 		JButton btnExit = new JButton("Exit");
 		
-		btnExit.setForeground(Color.BLACK);
+		btnExit.setForeground(new Color(0, 0, 0));
 		
-		btnExit.setBackground(Color.WHITE);
+		btnExit.setBackground(new Color(255, 255, 255));
 		
 		btnExit.setBounds(540, 340, 89, 23);
 		
@@ -67,8 +69,9 @@ public class GUI extends JFrame
 		
 		
 		JButton btnTrainProgram = new JButton("Accuracy");
+		btnTrainProgram.setForeground(new Color(0, 0, 0));
 		
-		btnTrainProgram.setBackground(Color.WHITE);
+		btnTrainProgram.setBackground(new Color(255, 255, 255));
 		
 		btnTrainProgram.addActionListener(new ActionListener() 
 		{
@@ -91,19 +94,9 @@ public class GUI extends JFrame
 		btnTrainProgram.setBounds(10, 340, 109, 23);
 		getContentPane().add(btnTrainProgram);
 		
-		JLabel lblCoronavirusTestingTool = new JLabel("COVID19 Testing Tool");
-		lblCoronavirusTestingTool.setBackground(Color.WHITE);
-		
-		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));
-		
-		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);
-		
-		lblCoronavirusTestingTool.setBounds(10, 11, 619, 35);
-		
-		getContentPane().add(lblCoronavirusTestingTool);
-		
 		
 		JButton btnNewButton = new JButton("Check");
+		btnNewButton.setForeground(new Color(0, 0, 0));
 		
 		
 		btnNewButton.addActionListener(new ActionListener() 
@@ -120,13 +113,15 @@ public class GUI extends JFrame
 				}
 			}
 		});
-		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setBackground(new Color(255, 255, 255));
 		
 		btnNewButton.setBounds(129, 340, 89, 23);
 		
 		getContentPane().add(btnNewButton);
 		
 		JButton btnChooseFile = new JButton("Choose File");
+		btnChooseFile.setBackground(new Color(255, 255, 255));
+		btnChooseFile.setForeground(new Color(0, 0, 0));
 		
 		
 		openFileChooser = new JFileChooser();
@@ -147,6 +142,19 @@ public class GUI extends JFrame
 		});
 		btnChooseFile.setBounds(260, 340, 101, 23);
 		getContentPane().add(btnChooseFile);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(157, 24, 366, 49);
+		getContentPane().add(panel);
+		
+		JLabel lblCoronavirusTestingTool = new JLabel("COVID19 Testing Tool");
+		panel.add(lblCoronavirusTestingTool);
+		lblCoronavirusTestingTool.setForeground(new Color(0, 0, 0));
+		lblCoronavirusTestingTool.setBackground(new Color(0, 0, 0));
+		
+		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));
+		
+		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		
 
@@ -189,8 +197,4 @@ public class GUI extends JFrame
 		
 		this.fileName = fileName;
 	}
-
-
-
-	
 }

@@ -73,6 +73,9 @@ public class TestAccuracy
 			
 			Correct = Math.round(Correct);
 			
+			testList.clear();
+			fullList.clear();
+			
 		}//End findAccuracy()
 
 
