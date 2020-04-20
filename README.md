@@ -1,3 +1,6 @@
+Video Link: https://www.youtube.com/watch?v=oUFTBnDg3jI
+
+
 This program is a machine learning program used to determine whether or not a person has the Coronaviurs.
 This program uses a Naive Bayes classifier to determine if a patient has the virus. There are 7 classes in the program:
 FileProcessing, PatientInfo, Probability, TestAccuracy, GUI and CoronaCheck.
