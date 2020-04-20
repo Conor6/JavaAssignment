@@ -39,3 +39,4 @@ I would try make the Probability class more efficient as there is a lot of lines
 I would make the UI's look better and add in logos and icons to help with the mapping of the program. I would also look at adding functionality
 where the user can directly add a patient which already knows if they have the virus into the system so that the program's data set is increased.
 The error checking in the program could be better and more error checking could be added, with more time I would add more error checking 
+
