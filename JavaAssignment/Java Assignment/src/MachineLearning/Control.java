@@ -15,7 +15,7 @@ package MachineLearning;
  * TestAccuracy - This class is used to test the accuracy of the program. This is done by splitting the file into a 70/30 split. This program is trained by the 70% and
  * then it is tested on the 30%. The amount of right answers are recorded and the accuracy is calculated
  * 
- * GUI - This is the home screen of the program. The user uses this window to navegate around the program and ultilise its various features
+ * GUI - This is the home screen of the program. The user uses this window to navegate around the program and utilize its various features
  * 
  * CoronaCheck - This is the window where the user enters the patients symptoms into the program. The probability of the patient having the coronavirus
  * is the displayed on the screen

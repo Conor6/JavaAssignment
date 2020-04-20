@@ -75,7 +75,7 @@ public class FileProcessing
 		catch(FileNotFoundException e)
 		
 		{
-			e.printStackTrace();
+			System.out.println("Could not read file!");
 		}
 
 	}//End readFile()
