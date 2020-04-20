@@ -1,5 +1,28 @@
 package MachineLearning;
-
+/* Probability class 
+ * 
+ * - This class has two methods count() and findProb()
+ * 
+ * - count() 
+ * 
+ * Is a method that counts how many times each symptom appears in the file that is passed in.
+ * These counts are to be used later on to calculate the probabiliy.
+ * 
+ * - findProb() 
+ * 
+ * Uses the counts calculated in the other method to calculate the probability of having each symptom.
+ * Then  to calculate the probability of having COVID19 we use Naive Bayes' formula.
+ * The probabilities of having COVID19 are multiplied together and stored in ANSY and
+ * the probabilities of not having COVID19 are multiplied together and stored in ANSN.
+ * ANSY is divided by the sum of the two variables and then muliplied by 100. This gives
+ * us the probability of having COVID19.
+ * 
+ * 
+ * Author:   Conor Flood
+ * 
+ * Compiler: Eclipse IDE
+ * 
+*/
 import java.util.ArrayList;
 import java.lang.Math;
 
@@ -78,7 +101,7 @@ public class Probability
 	private float answer = 0;					//Stores the percentage of HAVING COVID19
 
 
-	
+	//Constructor
 	public Probability(String temperature, String aches, String soreThroat, String cough, String fromDZ) 
 	{
 		this.temperature = temperature;
@@ -560,6 +583,7 @@ public class Probability
 		//Rounding the percentage so it is more readable
 		setAnswer(Math.round(getAnswer()));
 		
+		probabilityList.clear();
 	 }
 
 	 //Setters and Getters

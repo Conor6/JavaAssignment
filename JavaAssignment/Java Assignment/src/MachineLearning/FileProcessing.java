@@ -1,19 +1,37 @@
 package MachineLearning;
 
+/*FileProcessing -
+ * 
+ * - This class has two methods: openFile() and readFile()
+ * 
+ * - openFile()
+ * 
+ * This method sets the file path that the user has entered. This is set to MLdata.csv by default.
+ * 
+ * - readFile()
+ * 
+ * This method goes through the file line by line adding each column to the String array symptoms. Then each line is added 
+ * to an arrayList symptomList. A patient object is created for each line of the data. This data is then used in the Probability class
+ * 
+ * 
+ * Author: 	 Conor Flood
+ * 
+ * Compiler: Eclipse IDE
+*/
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//FP class
+
 
 public class FileProcessing 
 {
 	//Attributes
 	private File dataFile;
 	private String data;
-	private String[] values;
+	private String[] symptom;
 	public static ArrayList<PatientInfo> symptomsList = new ArrayList<PatientInfo>();
 	
 	
@@ -21,7 +39,7 @@ public class FileProcessing
 	{
 		this.setDataFile(dataFile);
 		this.setData(data);
-		this.setValues(values);
+		this.setSymptom(symptom);
 	}
 	
 	
@@ -45,10 +63,10 @@ public class FileProcessing
 			{
 				String data = inputStream.nextLine(); //Gets a whole line from file
 				
-				String[] values = data.split(",");//Gets a column
+				String[] symptom = data.split(",");//Gets a column
 				
 				
-				symptomsList.add(new PatientInfo(values[0], values[1], values[2], values[3], values[4], values[5])); //Creates a new Patient and adds their symptoms 
+				symptomsList.add(new PatientInfo(symptom[0], symptom[1], symptom[2], symptom[3], symptom[4], symptom[5])); //Creates a new Patient and adds their symptoms 
 			}
 		
 			inputStream.close(); //Closes the Scanner class
@@ -76,15 +94,15 @@ public class FileProcessing
 	}
 
 
-	String[] getValues() 
+	String[] getSymptom() 
 	{
-		return values;
+		return symptom;
 	}
 
 
-	void setValues(String[] values) 
+	void setSymptom(String[] symptom) 
 	{
-		this.values = values;
+		this.symptom = symptom;
 	}
 
 
@@ -111,5 +129,5 @@ public class FileProcessing
 	{
 		this.symptomsList = symptomsList;
 	}
-	
+
 }

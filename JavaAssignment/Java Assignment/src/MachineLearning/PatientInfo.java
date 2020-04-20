@@ -1,17 +1,27 @@
 package MachineLearning;
 
-//Patient Info
+
+/* Patient Info Class -
+ * 
+ * This class is used in the symptomsList ArrayList. The ArrayList is populated using data from the entered file. 
+ * The ArrayList symptomsList creates various patient objects. All their attributes are created using the constructor of this class
+ * 
+ * Author:   Conor Flood
+ * 
+ * Compiler: Eclipse IDE
+ * 
+ */
 
 public class PatientInfo 
 {
 	
 	//Attributes
-	private String temperature;
-	private String aches;
-	private String cough;
-	private String soreThroat;
-	private String travelFromDZ;
-	private String hasCOVID19;
+	private String temperature;			//Patient's temperature is stored here
+	private String aches;				//Whether the patient has aches is store in aches
+	private String cough;				//Whether the patient has a cough is stored here
+	private String soreThroat;			//Whether the patient has a sore Throat is stored in this variable
+	private String travelFromDZ;		//Whether or not the patient has travelled from a danger zone is stored here
+	private String hasCOVID19;			//Whether or not the patient has COVID19 is stored here
 	
 	
 	
@@ -29,7 +39,7 @@ public class PatientInfo
 	}
 
 	
-	//toString to print out the patient symptoms
+	//toString to print out the patient symptoms for testing
 	public String toString()
 	{
 		return("Temperature is  " +getTemperature()+ "  Has Aches " +getAches()+ "  Has a Cough " +getCough()+ "  Has a SoreThroat " +getSoreThroat()+" Travelled from Danger Zone? " 
