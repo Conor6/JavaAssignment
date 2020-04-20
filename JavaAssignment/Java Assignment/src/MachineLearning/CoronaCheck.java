@@ -153,7 +153,7 @@ public class CoronaCheck extends JFrame
 					else
 					{	
 						//If the user does not enter all of the required symptoms they are prompted to enter all the users symptoms
-						JOptionPane.showMessageDialog(null,"Please enter all of the patient's symptoms");
+						JOptionPane.showMessageDialog(getContentPane(),"Please enter all of the patient's symptoms");
 					}
 						
 				}
