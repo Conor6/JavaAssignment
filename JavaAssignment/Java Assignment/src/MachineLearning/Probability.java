@@ -17,6 +17,8 @@ package MachineLearning;
  * ANSY is divided by the sum of the two variables and then muliplied by 100. This gives
  * us the probability of having COVID19.
  * 
+ * This class was built with the aid of this video to ensure the calculations were done correctly https://www.youtube.com/watch?v=CPqOCI0ahss&t=302s
+ * 
  * 
  * Author:   Conor Flood
  * 

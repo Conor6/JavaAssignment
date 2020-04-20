@@ -5,12 +5,15 @@ package MachineLearning;
  * This class is the UI for the user entering symptoms into the program to
  * check the likelihood that they have COVID19
  * The user selects which symptoms the patient has by clicking on Yes or No buttons next to the patient's symptoms
+ * This class was built with the help of WindowBuilder a drag and drop GUI constructor for Eclipse
  * 
  * Author:   Conor Flood
  * 
  * Complier: Eclipse IDE
  * 
 */
+
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -31,10 +34,10 @@ public class CoronaCheck extends JFrame
 
 	private JPanel contentPane;
 	private final ButtonGroup temperatureGroup = new ButtonGroup();		//Button group for Temperature
-	private final ButtonGroup achesGroup = new ButtonGroup();			//Button group for Aches
-	private final ButtonGroup soreThroatGroup = new ButtonGroup();		//Button group for Sore Throat
-	private final ButtonGroup coughGroup = new ButtonGroup();			//Button group for Cough
-	private final ButtonGroup dangerZoneGroup = new ButtonGroup();		//Button group for Travel from Danger Zone
+	private final ButtonGroup achesGroup       = new ButtonGroup();		//Button group for Aches
+	private final ButtonGroup soreThroatGroup  = new ButtonGroup();		//Button group for Sore Throat
+	private final ButtonGroup coughGroup       = new ButtonGroup();		//Button group for Cough
+	private final ButtonGroup dangerZoneGroup  = new ButtonGroup();		//Button group for Travel from Danger Zone
 	
 	
 	//These variables are passed into the 
@@ -63,56 +66,61 @@ public class CoronaCheck extends JFrame
 		
 		//Main Title	
 		JLabel lblCoronavirusTestingTool = new JLabel("Coronavirus Testing Tool");				//Label displaying name of program
-		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24));				//Setting font colour
+		lblCoronavirusTestingTool.setForeground(Color.BLACK);
+		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 30));				//Setting font colour
 		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);				//Setting the alignment of the text
-		lblCoronavirusTestingTool.setBounds(119, 11, 414, 35);									//Setting location of the text
+		lblCoronavirusTestingTool.setBounds(111, 11, 494, 44);									//Setting location of the text
 		contentPane.add(lblCoronavirusTestingTool);												//Adding text
 		
 		
 		//Secondary Title
 		JLabel lblEnterPaitientInformation = new JLabel("Enter Symptoms:");						//Creating new secondary title
-		lblEnterPaitientInformation.setFont(new Font("Arial", Font.BOLD | Font.ITALIC, 16));	//Setting font
-		lblEnterPaitientInformation.setBounds(10, 76, 267, 23);			
+		lblEnterPaitientInformation.setForeground(Color.BLACK);
+		lblEnterPaitientInformation.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 16));	//Setting font
+		lblEnterPaitientInformation.setBounds(10, 90, 267, 23);			
 		contentPane.add(lblEnterPaitientInformation);											//Adding secondary title to the window
 		
 		
 		//Temperature Label
 		JLabel lblTemperature = new JLabel("Temperature:");					//Creating Temperature label
-		lblTemperature.setFont(new Font("Tahoma", Font.PLAIN, 12));			//Setting font
-		lblTemperature.setBounds(10, 136, 87, 14);							//Setting location
+		lblTemperature.setForeground(Color.BLACK);
+		lblTemperature.setFont(new Font("Arial Black", Font.PLAIN, 14));			//Setting font
+		lblTemperature.setBounds(10, 136, 116, 29);							//Setting location
 		contentPane.add(lblTemperature);									//Adding to window	
 		
 		
 		//Aches Label													
 		JLabel lblAches = new JLabel("Aches:");								//Creating Temperature label
-		lblAches.setFont(new Font("Tahoma", Font.PLAIN, 12));				//Setting font
-		lblAches.setBounds(10, 161, 87, 14);								//Setting location
+		lblAches.setForeground(Color.BLACK);
+		lblAches.setFont(new Font("Arial Black", Font.PLAIN, 14));				//Setting font
+		lblAches.setBounds(10, 175, 87, 36);								//Setting location
 		contentPane.add(lblAches);											//Adding to window
 		
 		
 		//Sore Throat Label
 		JLabel lblTemperature_1 = new JLabel("Sore Throat:\r\n");			//Creating Sore Throat label
-		lblTemperature_1.setFont(new Font("Tahoma", Font.PLAIN, 12));		//Setting font
-		lblTemperature_1.setBounds(10, 186, 87, 14);						//Setting location
+		lblTemperature_1.setFont(new Font("Arial Black", Font.PLAIN, 14));		//Setting font
+		lblTemperature_1.setBounds(10, 222, 116, 26);						//Setting location
 		contentPane.add(lblTemperature_1);									//Adding to the window
 		
 		
 		//Cough Label
 		JLabel lblCough = new JLabel("Cough:\r\n");							//Creating Cough label
-		lblCough.setFont(new Font("Tahoma", Font.PLAIN, 12));				//Setting font
-		lblCough.setBounds(10, 211, 87, 14);								//Setting location
+		lblCough.setFont(new Font("Arial Black", Font.PLAIN, 14));				//Setting font
+		lblCough.setBounds(10, 270, 87, 23);								//Setting location
 		contentPane.add(lblCough);											//Adding to window
 		
 		
 		//Danger Zone Label
 		JLabel lblTravelledFromDanger = new JLabel("Been to Danger Zone:");	//Creating Danger Zone label
-		lblTravelledFromDanger.setFont(new Font("Tahoma", Font.PLAIN, 12));	//Setting font
-		lblTravelledFromDanger.setBounds(10, 236, 152, 14);					//Setting location
+		lblTravelledFromDanger.setFont(new Font("Arial Black", Font.PLAIN, 14));	//Setting font
+		lblTravelledFromDanger.setBounds(10, 304, 173, 35);					//Setting location
 		contentPane.add(lblTravelledFromDanger);							//Adding to the window
 		
 		
 		//Creating See Results label
 		JButton btnResults = new JButton("See Restults");					//Cerating See Results button
+		btnResults.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		btnResults.addActionListener(new ActionListener() 					//Adding Action Listener to see if user clicked button
 		{
 			public void actionPerformed(ActionEvent myEvent) 
@@ -136,12 +144,11 @@ public class CoronaCheck extends JFrame
 						prob.findProb();	//Calculating the patients probability of having COVID19
 						
 						JOptionPane.showMessageDialog(getContentPane(),"The probability that this person has COVID19 is " +prob.getAnswer()+ "%");
-						
-						setVisible(false); //Closing the enter symptoms page
-						
+					
 						GUI homeScreen = new GUI();	//Creating a new GUI object so the user returns to the home screen
 						homeScreen.setVisible(true);//Making the home screen visible
 						
+						setVisible(false); //Closing the enter symptoms page
 					}//End nested if
 					else
 					{	
@@ -157,15 +164,16 @@ public class CoronaCheck extends JFrame
 		
 		//Results button
 		btnResults.setBackground(Color.WHITE);		//Setting background colour
-		btnResults.setBounds(96, 316, 116, 23);		//Setting location
+		btnResults.setBounds(174, 368, 144, 44);		//Setting location
 		contentPane.add(btnResults);				//Adding button to window
 		
 		
 		
 		//Creating Back button
 		JButton backButton = new JButton("Back");			//Craeting button
+		backButton.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		backButton.setBackground(Color.WHITE);				//Setting background colour
-		backButton.setBounds(229, 316, 106, 23);			//Setting location for button
+		backButton.setBounds(328, 368, 144, 44);			//Setting location for button
 		contentPane.add(backButton);						//Adding button to the window
 		
 		backButton.addActionListener(new ActionListener() //Adding Action listener to listen for mouse clicks
@@ -187,9 +195,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Cool temperature
 		JRadioButton Cool = new JRadioButton("Cool");				///Creating radio button for Cool temperature
+		Cool.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		Cool.setBackground(new Color(135, 206, 235));				//Setting background colour
 		temperatureGroup.add(Cool);									//Adding Cool to Temperature Button group
-		Cool.setBounds(103, 133, 64, 23);							//Setting location
+		Cool.setBounds(221, 134, 64, 32);							//Setting location
 		contentPane.add(Cool);										//Ading to window
 		
 		
@@ -212,9 +221,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Normal Temperature
 		JRadioButton Normal = new JRadioButton("Normal");			//Creating Normal temperature radio button
+		Normal.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		Normal.setBackground(new Color(135, 206, 235));				//Setting backgrund colour of button
 		temperatureGroup.add(Normal);								//Adding button to temperature button group
-		Normal.setBounds(168, 133, 79, 23);							//Setting button location
+		Normal.setBounds(329, 139, 109, 23);							//Setting button location
 		contentPane.add(Normal);									//Adding to window
 		
 		Normal.addActionListener(new ActionListener() 
@@ -234,9 +244,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for hot temperature
 		JRadioButton Hot = new JRadioButton("Hot");					//Create Hot temperature radio button
+		Hot.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		Hot.setBackground(new Color(135, 206, 235));				//Set button background colour	
 		temperatureGroup.add(Hot);									//Add button to temperature radio button group	
-		Hot.setBounds(249, 133, 109, 23);							//Setting location of button
+		Hot.setBounds(468, 139, 109, 23);							//Setting location of button
 		contentPane.add(Hot);										//Adding button to window
 		
 		
@@ -257,9 +268,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Aches Yes
 		JRadioButton achesYes = new JRadioButton("Yes");			//Creating Yes radio button
+		achesYes.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		achesYes.setBackground(new Color(135, 206, 235));			//Setting background colour
 		achesGroup.add(achesYes);									//Adding to aches button group
-		achesYes.setBounds(103, 158, 56, 23);						//Setting location of button
+		achesYes.setBounds(221, 182, 56, 23);						//Setting location of button
 		contentPane.add(achesYes);									//Adding button to window
 		
 		
@@ -282,9 +294,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Aches no
 		JRadioButton achesNo = new JRadioButton("No");				//Creating radio button for aches no
+		achesNo.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		achesNo.setBackground(new Color(135, 206, 235));			//Setting background colour
 		achesGroup.add(achesNo);									//Adding to button group aches 
-		achesNo.setBounds(168, 158, 79, 23);						//Setting button location
+		achesNo.setBounds(329, 182, 79, 23);						//Setting button location
 		contentPane.add(achesNo);									//Adding to window
 		
 		
@@ -305,10 +318,12 @@ public class CoronaCheck extends JFrame
 		
 		
 		//Radio button for SoreThroat Yes
-		JRadioButton soreThroatYes = new JRadioButton("Yes");		//Creating radio button for soreThroat yes
+		JRadioButton soreThroatYes = new JRadioButton("Yes");
+		soreThroatYes.setForeground(Color.BLACK);
+		soreThroatYes.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		soreThroatYes.setBackground(new Color(135, 206, 235));		//Setting colour
 		soreThroatGroup.add(soreThroatYes);							//Adding button to sore throat button group
-		soreThroatYes.setBounds(103, 183, 64, 23);					//Setting location
+		soreThroatYes.setBounds(221, 225, 64, 23);					//Setting location
 		contentPane.add(soreThroatYes);								//Adding button to window
 		
 		
@@ -331,9 +346,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for SoreThroat No
 		JRadioButton soreThroatNo = new JRadioButton("No");			//Creaing radio button for sore throat no
+		soreThroatNo.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		soreThroatNo.setBackground(new Color(135, 206, 235));		//Setting colour
 		soreThroatGroup.add(soreThroatNo);							//Adding sore throat no to button group
-		soreThroatNo.setBounds(168, 183, 109, 23);					//Setting location
+		soreThroatNo.setBounds(329, 228, 109, 23);					//Setting location
 		contentPane.add(soreThroatNo);								//Add button to window
 		
 		soreThroatNo.addActionListener(new ActionListener() 		//Add action listener to see if button is selected
@@ -355,9 +371,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio for Cough Yes
 		JRadioButton coughYes = new JRadioButton("Yes");			//Creating radio button for cough yes
+		coughYes.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		coughYes.setBackground(new Color(135, 206, 235));			//Setting background colour
 		coughGroup.add(coughYes);									//Adding button to coughGroup
-		coughYes.setBounds(96, 207, 56, 23);						//Setting location	
+		coughYes.setBounds(221, 270, 56, 23);						//Setting location	
 		contentPane.add(coughYes);									//Adding button to window
 		
 		
@@ -380,9 +397,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Cough No
 		JRadioButton coughNo = new JRadioButton("No");				//Creating radio button for cough no
+		coughNo.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		coughNo.setBackground(new Color(135, 206, 235));			//Setting background colour
 		coughGroup.add(coughNo);									//Add button to button group coughGroup
-		coughNo.setBounds(168, 208, 109, 23);						//Setting location of button
+		coughNo.setBounds(329, 270, 109, 23);						//Setting location of button
 		contentPane.add(coughNo);									//Adding buttont to window
 		
 		
@@ -403,9 +421,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Been to DZ Yes
 		JRadioButton DZYes = new JRadioButton("Yes");				//Creating radio button for danger zone yes
+		DZYes.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		DZYes.setBackground(new Color(135, 206, 235));				//Setting background colour
 		dangerZoneGroup.add(DZYes);									//Add button to dangerZoneGroup
-		DZYes.setBounds(168, 233, 56, 23);							//Set button location
+		DZYes.setBounds(221, 310, 56, 23);							//Set button location
 		contentPane.add(DZYes);										//Add button to window
 		
 		DZYes.addActionListener(new ActionListener() 				//Add ActionListener to see if button is seleced
@@ -425,9 +444,10 @@ public class CoronaCheck extends JFrame
 		
 		//Radio button for Been to DZ No
 		JRadioButton DZNo = new JRadioButton("No");					//Create dangerzone no button
+		DZNo.setFont(new Font("Arial Black", Font.PLAIN, 14));
 		DZNo.setBackground(new Color(135, 206, 235));				//Set colour
 		dangerZoneGroup.add(DZNo);									//Add button to dangerzone button group
-		DZNo.setBounds(229, 233, 109, 23);							//Set button location
+		DZNo.setBounds(328, 310, 109, 23);							//Set button location
 		contentPane.add(DZNo);										//Add button to window
 		
 		DZNo.addActionListener(new ActionListener() 				//Add action listener to see if button is selected

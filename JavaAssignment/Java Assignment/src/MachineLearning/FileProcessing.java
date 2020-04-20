@@ -55,13 +55,13 @@ public class FileProcessing
 	{
 		try
 		{
-			Scanner inputStream = new  Scanner(getDataFile());
+			Scanner fileInput = new  Scanner(getDataFile());
 			
-			inputStream.nextLine(); //This ignores the first line of the CSV file
+			fileInput.nextLine(); //This ignores the first line of the CSV file
 			
-			while(inputStream.hasNext()) //Keep going until there are no more lines left in the file
+			while(fileInput.hasNext()) //Keep going until there are no more lines left in the file
 			{
-				String data = inputStream.nextLine(); //Gets a whole line from file
+				String data = fileInput.nextLine(); //Gets a whole line from file
 				
 				String[] symptom = data.split(",");//Gets a column
 				
@@ -69,7 +69,7 @@ public class FileProcessing
 				symptomsList.add(new PatientInfo(symptom[0], symptom[1], symptom[2], symptom[3], symptom[4], symptom[5])); //Creates a new Patient and adds their symptoms 
 			}
 		
-			inputStream.close(); //Closes the Scanner class
+			fileInput.close(); //Closes the Scanner class
 		}
 		
 		catch(FileNotFoundException e)

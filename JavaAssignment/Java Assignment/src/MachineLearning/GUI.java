@@ -3,13 +3,14 @@ package MachineLearning;
 
 /* This class is the Home Screen for the GUI. This is used to create the buttons and text on the home page of the program.
  * The user uses the buttons on this home page to test the accuracy of the program, check whether someone has the coronavirus,
- * choose a file or exit the program.
+ * choose a file or exit the program. This class was built with the help of WindowBuilder a drag and drop GUI constructor for Eclipse
  * 
  * Author:   Conor Flood
  * 
  * Compiler: Eclipse IDE
  * 
 */
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -22,20 +23,18 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import javax.swing.JPanel;
+
 
 
 @SuppressWarnings("serial")
 public class GUI extends JFrame 
 {
-	//Used to store the file path
-	private JFileChooser openFileChooser;
-	private String fileName;	//Used to store the file name
+	
+	private JFileChooser fileChooser;	//Used to open the file chooser menu
+	private String fileName;			//Used to store the file name and path
 	
 	
-	/**
-	 * Create the frame.
-	 */
+	
 	public GUI() 
 	{
 		
@@ -49,12 +48,13 @@ public class GUI extends JFrame
 		
 		//Creating the Exit button
 		JButton btnExit = new JButton("Exit");
+		btnExit.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		
 		btnExit.setForeground(new Color(0, 0, 0)); //Setting Foreground colour for button
 		
 		btnExit.setBackground(new Color(255, 255, 255)); //Setting Background colour for button
 		
-		btnExit.setBounds(540, 340, 89, 23); //Location of button
+		btnExit.setBounds(559, 357, 145, 55); //Location of button
 		
 		getContentPane().add(btnExit); //Adding the button to the content pane
 		
@@ -66,7 +66,7 @@ public class GUI extends JFrame
 			{
 				if(myEvent.getSource() == btnExit) 
 				{
-					System.exit(0);
+					System.exit(0);						//Used to exit program
 				}
 			}
 			
@@ -76,6 +76,7 @@ public class GUI extends JFrame
 		
 		//Creating the Accuracy Button, setting the colours and location
 		JButton btnTrainProgram = new JButton("Accuracy");
+		btnTrainProgram.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnTrainProgram.setForeground(new Color(0, 0, 0));
 		
 		btnTrainProgram.setBackground(new Color(255, 255, 255));
@@ -99,13 +100,14 @@ public class GUI extends JFrame
 		});
 		
 		
-		btnTrainProgram.setBounds(10, 340, 109, 23); //Setting location
+		btnTrainProgram.setBounds(261, 205, 145, 55); //Setting location
 		getContentPane().add(btnTrainProgram);//Adding the button to the panel
 		
 		
 		
 		//Creating Check button to allow the user to enter the patients symptoms and find out the probability of the patient having COVID19
 		JButton Check = new JButton("Check");
+		Check.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		Check.setForeground(new Color(0, 0, 0));
 		
 		//Adding an Action Listner to Check button
@@ -126,7 +128,7 @@ public class GUI extends JFrame
 		});
 		Check.setBackground(new Color(255, 255, 255));	//Setting colour
 		
-		Check.setBounds(129, 340, 89, 23);				//Setting location
+		Check.setBounds(261, 141, 145, 55);				//Setting location
 		
 		getContentPane().add(Check);					//Adding Check button
 		
@@ -134,13 +136,14 @@ public class GUI extends JFrame
 		
 		//Creating Choose File button
 		JButton btnChooseFile = new JButton("Choose File");
+		btnChooseFile.setFont(new Font("Arial Black", Font.PLAIN, 16));
 		btnChooseFile.setBackground(new Color(255, 255, 255));	//Setting background colour
 		btnChooseFile.setForeground(new Color(0, 0, 0));		//Setting foreground colour
 		
 		
-		openFileChooser = new JFileChooser();					//Creating a new FileChooser
-		openFileChooser.setCurrentDirectory(new File("C:\\temp")); //Setting the file directory
-		openFileChooser.setFileFilter(new FileNameExtensionFilter(".csv file", ".csv"));	//Setting a file filter so that only csv files can be seen
+		fileChooser = new JFileChooser();					//Creating a new FileChooser
+		fileChooser.setCurrentDirectory(new File("C:\\temp")); //Setting the file directory
+		fileChooser.setFileFilter(new FileNameExtensionFilter(".csv file", ".csv"));	//Setting a file filter so that only csv files can be seen
 		
 		btnChooseFile.addActionListener(new ActionListener() //Adding Action Listener to button
 		{
@@ -156,22 +159,18 @@ public class GUI extends JFrame
 		});
 		
 		
-		btnChooseFile.setBounds(260, 340, 101, 23);			//Setting button location
-		getContentPane().add(btnChooseFile);				//Adding the button to content pane
-		
-		JPanel panel = new JPanel();						//Creating a new panel as a white background to the title
-		panel.setBackground(Color.WHITE);
-		panel.setBounds(157, 24, 366, 49);					//Setting location
-		getContentPane().add(panel);
+		btnChooseFile.setBounds(261, 271, 145, 55);			//Setting button location
+		getContentPane().add(btnChooseFile);
 		
 		
 		
-		JLabel lblCoronavirusTestingTool = new JLabel("COVID19 Testing Tool");	//Title
-		panel.add(lblCoronavirusTestingTool);									//Adding to the panel
+		JLabel lblCoronavirusTestingTool = new JLabel("Coronavirus Testing Tool");
+		lblCoronavirusTestingTool.setBounds(90, 11, 499, 43);
+		getContentPane().add(lblCoronavirusTestingTool);
 		lblCoronavirusTestingTool.setForeground(new Color(0, 0, 0));			//Setting the colours
 		lblCoronavirusTestingTool.setBackground(new Color(0, 0, 0));			//Setting the colours
 		
-		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 24)); //Setting fond type and size
+		lblCoronavirusTestingTool.setFont(new Font("Arial Black", Font.BOLD, 30)); //Setting fond type and size
 		
 		lblCoronavirusTestingTool.setHorizontalAlignment(SwingConstants.CENTER);	//Centring the title
 		
@@ -181,28 +180,29 @@ public class GUI extends JFrame
 	}
 	
 	//chooseFile method allows the user to select which file they want to enter into the program
+	//This method was made with the aid of https://mkyong.com/swing/java-swing-jfilechooser-example/
+	// and https://docs.oracle.com/javase/7/docs/api/javax/swing/JFileChooser.html
 	public String chooseFile() 
 	{
 		
-		 Control.setCsvFile("C:\\Users\\conor\\git\\JavaAssignment\\Java Assignment\\MLdata.csv");
+		Control.setCsvFile("MLdata.csv");
 		
-		openFileChooser = new JFileChooser();
-		openFileChooser.setCurrentDirectory(new File("C:\\"));								//Setting default directory
-		openFileChooser.setFileFilter(new FileNameExtensionFilter(".csv file", "csv"));		//Used to filter the files so that only csv files show up
+		fileChooser = new JFileChooser();
+		fileChooser.setCurrentDirectory(new File("C:\\"));								//Setting default directory
+		fileChooser.setFileFilter(new FileNameExtensionFilter(".csv file", "csv"));		//Used to filter the files so that only csv files show up
 		
-		int returnValue = openFileChooser.showOpenDialog(getContentPane());					//Returns a value if the user has selected a file
+		int returnValue = fileChooser.showOpenDialog(getContentPane());					//Returns a value if the user has selected a file
 		
 		if(returnValue == JFileChooser.APPROVE_OPTION)					//If the user has selected a file the file path is passes to Control csvFile
 		{
-			setFileName(openFileChooser.getSelectedFile().getPath());
+			setFileName(fileChooser.getSelectedFile().getPath());
 			
 			System.out.println(Control.getCsvFile());
 		}
-		else //If the user doesn't selecta file they are prompted to select a file. The program wont work without a file
+		else //If the user doesn't select a file they are prompted to select a file. The program wont work without a file
 		{
 			JOptionPane.showMessageDialog(getContentPane(),"No file has been chosen! Please choose a file!");
-			
-			chooseFile(); //User prompted to enter file
+			setFileName("MLdata.csv"); //Setting the default file again so user can still check symptoms
 		}
 		
 		return getFileName();
@@ -210,6 +210,7 @@ public class GUI extends JFrame
 	}
 	
 	
+	//Getters and Setters
 	public String getFileName() 
 	{
 		return fileName;

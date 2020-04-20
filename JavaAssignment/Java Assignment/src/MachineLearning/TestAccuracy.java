@@ -53,43 +53,49 @@ public class TestAccuracy
 			float trainingDataSize = fullList.size() - testListSize;	//Calculating the size of the 
 			
 			
-			//Calculate the probability for 30%
+			//Counting how many occurances of each symptom there is in 70% of the data
 			for(int i=(int)testListSize; i<trainingDataSize; i++)
 			{
 				
+				//Creating a new probability object and calculating the probability of each symptom in fullList which is 70% of the data
 				Probability prob = new Probability(fullList.get(i).getTemperature(), fullList.get(i).getAches(), fullList.get(i).getSoreThroat(), fullList.get((int) i).getCough(), fullList.get(i).getTravelFromDZ());
-			
+				
+				//Calling the count method from the Probability class
 				prob.count();
 				
 			}
 			
-			//Only adds 30% of the data
+			//Adding unuseddata to testList which is 30% of the fullList
 			for(int i = 0; i<testListSize; i++)
 			{
 				testList.add(fullList.get(i));
 			}
 			
 			
+			//Calculating the probability of having COVID19 for 30% of the data. This data will be compared against the 70% of the data that the program was trained on
 			for(int i = 0; i<testListSize; i++)
 			{
-				
+				//Creating a new probability class with i representing each row of the testList
 				Probability prob = new Probability(testList.get(i).getTemperature(), testList.get(i).getAches(), testList.get(i).getSoreThroat(), testList.get(i).getCough(), testList.get(i).getTravelFromDZ());
-			
+				
+				//Calculating the probability of 30% of the data set having COVID19 using the counts from 70% of the data set
 				prob.findProb();
-			
-				if(prob.getAnswer() >= 50 & testList.get(i).getHasCOVID19().equals("yes"))
+				
+				//Counting how many correct predictions were made
+				if(prob.getAnswer() >= 50 & testList.get(i).getHasCOVID19().equals("yes"))	//If the answer of hasCOVID19 from findProb() is greater than or equal to 50 Correct is incremented
 				{
 					Correct++;	
 				}
-				else if(prob.getAnswer() <= 50 & testList.get(i).getHasCOVID19().equals("no"))
+				else if(prob.getAnswer() <= 50 & testList.get(i).getHasCOVID19().equals("no"))	//If the answer of hasCOVID19 from findProb() is less than or equal to 50 Correct is incremented
 				{
 					Correct++;
 				}
 			}
 			
+			//Calculating the accuracy of the program
 			Correct = Correct/(float)testList.size()*100;
 			
-			Correct = Math.round(Correct);
+			Correct = Math.round(Correct);	//Rounding the answer to a full percentage
 			
 			testList.clear();	//Empties the arrayList
 			fullList.clear();	//Empties the arrayList
